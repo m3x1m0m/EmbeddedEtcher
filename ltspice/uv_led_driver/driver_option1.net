@@ -1,0 +1,19 @@
+* Z:\home\maximilian\Etching\ltspice\uv_led_driver\driver_option1.asc
+XU1 VSIG N005 V+ 0 N006 LM324
+V1 V+ 0 18V
+Q1 N004 N006 N005 0 2N3904
+V2 VSIG 0
+D1 N003 N004 LXHL-BW02
+R1 N005 0 10R
+D2 N002 N003 LXHL-BW02
+D3 N001 N002 LXHL-BW02
+D4 V+ N001 LXHL-BW02
+.model D D
+.lib C:\users\maximilian\My Documents\LTspiceXVII\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\users\maximilian\My Documents\LTspiceXVII\lib\cmp\standard.bjt
+.include LM324.txt
+.dc V2 0mV 300mV
+.backanno
+.end
