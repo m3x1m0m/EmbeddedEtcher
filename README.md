@@ -14,7 +14,7 @@ filled with sodium persulfate (Na<sub>2</sub>S<sub>2</sub>O<sub>8</sub>) or
 iron(III) chloride (FeCl<sub>3</sub>) dissolved in water of course.
 
 ## Cuvette
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/m3x1m0m/ecthing/blob/master/photos/cuvette.jpg)
 ## UV Light
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/m3x1m0m/ecthing/blob/master/photos/uv_lamp.jpg)
 ## Etching Instruction 
