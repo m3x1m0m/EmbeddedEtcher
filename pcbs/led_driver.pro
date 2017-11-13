@@ -1,4 +1,4 @@
-update=sön 12 nov 2017 16:24:02
+update=mån 13 nov 2017 11:30:39
 version=1
 last_client=kicad
 [pcbnew]
@@ -58,6 +58,5 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=/home/maximilian/MyKiCadLibs/SchematicSymbols/opamps
-LibName31=/home/maximilian/MyKiCadLibs/SchematicSymbols/mytransistors
-LibName32=/home/maximilian/MyKiCadLibs/SchematicSymbols/myopamps
+LibName30=/home/maximilian/MyKiCadLibs/SchematicSymbols/myopamps
+LibName31=/home/maximilian/MyKiCadLibs/SchematicSymbols/mydacs

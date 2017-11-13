@@ -35,7 +35,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 35
+Sheet 35 35
 Title ""
 Date ""
 Rev ""
@@ -45,16 +45,15 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 6400 1875 2125 2050
-U 5A0916C5
-F0 "LEDDriver" 60
-F1 "LEDDriver.sch" 60
-$EndSheet
-$Sheet
-S 2380 1810 2170 2300
-U 5A15F128
-F0 "Power" 60
-F1 "power.sch" 60
-$EndSheet
+$Comp
+L Barrel_Jack J?
+U 1 1 5A15F131
+P 1750 1350
+F 0 "J?" H 1750 1560 50  0000 C CNN
+F 1 "Barrel_Jack" H 1750 1175 50  0000 C CNN
+F 2 "Connectors:BARREL_JACK" H 1800 1310 50  0001 C CNN
+F 3 "" H 1800 1310 50  0001 C CNN
+	1    1750 1350
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
