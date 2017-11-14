@@ -36,7 +36,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 37
+Sheet 37 37
 Title ""
 Date ""
 Rev ""
@@ -46,28 +46,4 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 4300 2900 1500 1100
-U 5A0916C5
-F0 "LEDDriver" 60
-F1 "LEDDriver.sch" 60
-$EndSheet
-$Sheet
-S 6000 2900 1500 1100
-U 5A15F128
-F0 "Power" 60
-F1 "power.sch" 60
-$EndSheet
-$Sheet
-S 2600 2900 1500 1100
-U 5A0C4E1C
-F0 "InterfaceNucleoFee103RB" 60
-F1 "InterfaceNucleoF103RB.sch" 60
-$EndSheet
-$Sheet
-S 7700 2900 1500 1100
-U 5A0CA6A5
-F0 "UI" 60
-F1 "UI.sch" 60
-$EndSheet
 $EndSCHEMATC
