@@ -95,23 +95,17 @@ F 3 "" H 2600 2020 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2600 1960 2600 1990
-Wire Wire Line
-	2600 1990 2600 2020
+	2600 1960 2600 2020
 Wire Wire Line
 	2600 1660 2600 1600
 Wire Wire Line
-	2050 1250 2600 1250
-Wire Wire Line
-	2600 1250 2770 1250
+	2050 1250 2770 1250
 Wire Wire Line
 	2600 1250 2600 1300
 Wire Wire Line
 	2050 1350 2290 1350
 Wire Wire Line
-	2290 1350 2290 1450
-Wire Wire Line
-	2290 1450 2290 1990
+	2290 1350 2290 1990
 Wire Wire Line
 	2290 1990 2600 1990
 Connection ~ 2600 1990
@@ -182,11 +176,7 @@ F 4 "TS30011-M050QFNRCT-ND" H 6535 2980 60  0001 C CNN "Digikey"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7385 2880 7835 2880
-Wire Wire Line
-	7835 2880 7935 2880
-Wire Wire Line
-	7935 2880 8035 2880
+	7385 2880 8035 2880
 Wire Wire Line
 	7450 3080 7385 3080
 Wire Wire Line
@@ -230,15 +220,11 @@ F 3 "" H 7935 3475 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7935 3300 7935 3405
-Wire Wire Line
-	7935 3405 7935 3475
+	7935 3300 7935 3475
 Wire Wire Line
 	8460 3300 8460 3405
 Wire Wire Line
-	7935 3405 8460 3405
-Wire Wire Line
-	8460 3405 8735 3405
+	7935 3405 8735 3405
 Wire Wire Line
 	8735 3405 8735 3300
 Connection ~ 7935 3405
@@ -266,11 +252,7 @@ Wire Wire Line
 Wire Wire Line
 	8735 2705 8735 2875
 Wire Wire Line
-	8335 2880 8460 2880
-Wire Wire Line
-	8460 2880 8735 2880
-Wire Wire Line
-	8735 2880 8935 2880
+	8335 2880 8935 2880
 $Comp
 L GND #PWR?
 U 1 1 5A0BC4D5
@@ -319,13 +301,7 @@ F 4 "490-6403-6-ND" H 4805 3060 60  0001 C CNN "Digikey"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4650 2680 4805 2680
-Wire Wire Line
-	4805 2680 5080 2680
-Wire Wire Line
-	5080 2680 5355 2680
-Wire Wire Line
-	5355 2680 5785 2680
+	4650 2680 5785 2680
 Wire Wire Line
 	4805 2680 4805 2910
 Wire Wire Line
@@ -337,15 +313,9 @@ Connection ~ 5355 2680
 Wire Wire Line
 	5355 3400 5355 3210
 Wire Wire Line
-	4805 3400 5080 3400
+	4805 3400 5535 3400
 Wire Wire Line
-	5080 3400 5355 3400
-Wire Wire Line
-	5355 3400 5535 3400
-Wire Wire Line
-	4805 3210 4805 3400
-Wire Wire Line
-	4805 3400 4805 3475
+	4805 3210 4805 3475
 Connection ~ 4805 3400
 Wire Wire Line
 	5080 3210 5080 3400
@@ -416,9 +386,7 @@ F 3 "" H 6360 5440 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6360 5380 6360 5410
-Wire Wire Line
-	6360 5410 6360 5440
+	6360 5380 6360 5440
 Wire Wire Line
 	6360 5080 6360 5020
 Wire Wire Line

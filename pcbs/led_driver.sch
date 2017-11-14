@@ -66,7 +66,7 @@ F1 "InterfaceNucleoF103RB.sch" 60
 $EndSheet
 $Sheet
 S 7700 2900 1500 1100
-U 5A0CA6A5
+U 5A0AF062
 F0 "UI" 60
 F1 "UI.sch" 60
 $EndSheet
