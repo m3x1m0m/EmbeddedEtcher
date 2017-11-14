@@ -31,6 +31,8 @@ LIBS:valves
 LIBS:myopamps
 LIBS:mydacs
 LIBS:mydcdcs
+LIBS:switches
+LIBS:mytactilesw
 LIBS:led_driver-cache
 EELAYER 25 0
 EELAYER END

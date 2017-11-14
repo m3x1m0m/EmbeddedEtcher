@@ -31,6 +31,8 @@ LIBS:valves
 LIBS:myopamps
 LIBS:mydacs
 LIBS:mydcdcs
+LIBS:switches
+LIBS:mytactilesw
 LIBS:led_driver-cache
 EELAYER 25 0
 EELAYER END
@@ -47,10 +49,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Conn_02x19_Odd_Even J?
+L Conn_02x19_Odd_Even J4
 U 1 1 5A0C4E25
 P 2830 3565
-F 0 "J?" H 2880 4565 50  0000 C CNN
+F 0 "J4" H 2880 4565 50  0000 C CNN
 F 1 "Conn_02x19_Odd_Even" H 2880 2565 50  0000 C CNN
 F 2 "" H 2830 3565 50  0001 C CNN
 F 3 "" H 2830 3565 50  0001 C CNN
@@ -132,10 +134,10 @@ NoConn ~ 3130 3065
 NoConn ~ 2630 3065
 NoConn ~ 2630 3865
 $Comp
-L Conn_02x19_Odd_Even J?
+L Conn_02x19_Odd_Even J5
 U 1 1 5A0C5DFF
 P 4355 3565
-F 0 "J?" H 4405 4565 50  0000 C CNN
+F 0 "J5" H 4405 4565 50  0000 C CNN
 F 1 "Conn_02x19_Odd_Even" H 4405 2565 50  0000 C CNN
 F 2 "" H 4355 3565 50  0001 C CNN
 F 3 "" H 4355 3565 50  0001 C CNN
@@ -219,8 +221,6 @@ Text GLabel 8050 2175 0    47   UnSpc ~ 0
 E5V
 Text GLabel 8225 2175 2    47   UnSpc ~ 0
 V5
-Wire Wire Line
-	8050 2175 8225 2175
 Text Notes 7875 2075 0    60   ~ 0
 Powering the STM board with 5V.
 Text Notes 7950 3300 0    60   ~ 0
@@ -229,19 +229,15 @@ Text GLabel 8125 3400 0    47   UnSpc ~ 0
 PB7
 Text GLabel 8300 3400 2    47   UnSpc ~ 0
 I2C_SDA
-Wire Wire Line
-	8125 3400 8300 3400
 Text GLabel 8125 3525 0    47   UnSpc ~ 0
 PB6
 Text GLabel 8300 3525 2    47   UnSpc ~ 0
 I2C_SCL
-Wire Wire Line
-	8125 3525 8300 3525
 $Comp
-L R R?
+L R R200
 U 1 1 5A0C91BF
 P 8000 4200
-F 0 "R?" V 8080 4200 50  0000 C CNN
+F 0 "R200" V 8080 4200 50  0000 C CNN
 F 1 "4.7k" V 8000 4200 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 7930 4200 50  0001 C CNN
 F 3 "" H 8000 4200 50  0001 C CNN
@@ -250,10 +246,10 @@ F 4 "311-4.70KHRCT-ND" V 8000 4200 60  0001 C CNN "Digikey"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R?
+L R R201
 U 1 1 5A0C92CA
 P 8300 4200
-F 0 "R?" V 8380 4200 50  0000 C CNN
+F 0 "R201" V 8380 4200 50  0000 C CNN
 F 1 "4.7k" V 8300 4200 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 8230 4200 50  0001 C CNN
 F 3 "" H 8300 4200 50  0001 C CNN
@@ -261,30 +257,26 @@ F 4 "311-4.70KHRCT-ND" V 8300 4200 60  0001 C CNN "Digikey"
 	1    8300 4200
 	1    0    0    -1  
 $EndComp
-Text GLabel 8300 4050 1    47   UnSpc ~ 0
+Text GLabel 8300 4350 3    47   UnSpc ~ 0
 I2C_SCL
-Text GLabel 8000 4050 1    47   UnSpc ~ 0
+Text GLabel 8000 4350 3    47   UnSpc ~ 0
 I2C_SDA
-$Comp
-L GND #PWR?
-U 1 1 5A0C94D9
-P 8000 4350
-F 0 "#PWR?" H 8000 4100 50  0001 C CNN
-F 1 "GND" H 8000 4200 50  0000 C CNN
-F 2 "" H 8000 4350 50  0001 C CNN
-F 3 "" H 8000 4350 50  0001 C CNN
-	1    8000 4350
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 5A0C94F7
-P 8300 4350
-F 0 "#PWR?" H 8300 4100 50  0001 C CNN
-F 1 "GND" H 8300 4200 50  0000 C CNN
-F 2 "" H 8300 4350 50  0001 C CNN
-F 3 "" H 8300 4350 50  0001 C CNN
-	1    8300 4350
-	1    0    0    -1  
-$EndComp
+Text GLabel 8050 2475 0    47   UnSpc ~ 0
++3V3
+Text GLabel 8250 2475 2    47   UnSpc ~ 0
+3V3
+Text GLabel 8000 4050 1    47   UnSpc ~ 0
+3V3
+Text GLabel 8300 4050 1    47   UnSpc ~ 0
+3V3
+Wire Wire Line
+	8050 2175 8225 2175
+Wire Wire Line
+	8125 3400 8300 3400
+Wire Wire Line
+	8125 3525 8300 3525
+Wire Wire Line
+	8050 2475 8250 2475
+Text Notes 7950 3850 0    60   ~ 0
+I2C pull-up resistors.
 $EndSCHEMATC

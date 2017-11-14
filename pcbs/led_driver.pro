@@ -1,4 +1,4 @@
-update=tis 14 nov 2017 09:04:39
+update=tis 14 nov 2017 14:47:00
 version=1
 last_client=kicad
 [pcbnew]
@@ -61,3 +61,5 @@ LibName29=valves
 LibName30=/home/maximilian/MyKiCadLibs/SchematicSymbols/myopamps
 LibName31=/home/maximilian/MyKiCadLibs/SchematicSymbols/mydacs
 LibName32=/home/maximilian/MyKiCadLibs/SchematicSymbols/mydcdcs
+LibName33=switches
+LibName34=/home/maximilian/MyKiCadLibs/SchematicSymbols/mytactilesw

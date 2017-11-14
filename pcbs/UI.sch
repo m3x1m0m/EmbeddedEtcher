@@ -31,6 +31,8 @@ LIBS:valves
 LIBS:myopamps
 LIBS:mydacs
 LIBS:mydcdcs
+LIBS:switches
+LIBS:mytactilesw
 LIBS:led_driver-cache
 EELAYER 25 0
 EELAYER END
@@ -46,4 +48,398 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L SW_Push_Dual SW?
+U 1 1 5A0B2B11
+P 3725 3550
+F 0 "SW?" H 3775 3650 50  0000 L CNN
+F 1 "SW_Push_Dual" H 3725 3280 50  0000 C CNN
+F 2 "MyTactileSW:SW_PUSH_TE_CONN_6x6" H 3725 3750 50  0001 C CNN
+F 3 "http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1825910&DocType=Customer+Drawing&DocLang=English" H 3725 3750 50  0001 C CNN
+F 4 "450-1650-ND" H 3725 3550 60  0001 C CNN "Digikey"
+	1    3725 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3525 3550 3425 3550
+Wire Wire Line
+	3425 3550 3425 3650
+Wire Wire Line
+	3425 3650 3425 3750
+Wire Wire Line
+	3425 3750 3525 3750
+Wire Wire Line
+	3925 3550 4025 3550
+Wire Wire Line
+	4025 3550 4025 3650
+Wire Wire Line
+	4025 3650 4025 3750
+Wire Wire Line
+	4025 3750 3925 3750
+$Comp
+L R R?
+U 1 1 5A0B32F4
+P 3250 3450
+F 0 "R?" V 3330 3450 50  0000 C CNN
+F 1 "10k" V 3250 3450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 3180 3450 50  0001 C CNN
+F 3 "" H 3250 3450 50  0001 C CNN
+F 4 "311-10KGRCT-ND" V 3250 3450 60  0001 C CNN "Digikey"
+	1    3250 3450
+	1    0    0    -1  
+$EndComp
+Text GLabel 3250 3300 1    60   UnSpc ~ 0
+3V3
+Wire Wire Line
+	3250 3600 3250 3650
+Wire Wire Line
+	3075 3650 3250 3650
+Wire Wire Line
+	3250 3650 3425 3650
+Connection ~ 3425 3650
+$Comp
+L GND #PWR?
+U 1 1 5A0B85D7
+P 4175 3675
+F 0 "#PWR?" H 4175 3425 50  0001 C CNN
+F 1 "GND" H 4175 3525 50  0000 C CNN
+F 2 "" H 4175 3675 50  0001 C CNN
+F 3 "" H 4175 3675 50  0001 C CNN
+	1    4175 3675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4025 3650 4175 3650
+Wire Wire Line
+	4175 3650 4175 3675
+Connection ~ 4025 3650
+Text GLabel 3075 3650 0    60   UnSpc ~ 0
+UI_BUTTON
+Connection ~ 3250 3650
+$Comp
+L Rotary_Encoder SW?
+U 1 1 5A0B8D30
+P 6800 4925
+F 0 "SW?" H 6800 5185 50  0000 C CNN
+F 1 "Rotary_Encoder" H 6800 4665 50  0000 C CNN
+F 2 "MyTactileSW:ROT_ENC_EN12_TT_Electronics_No_Switch" H 6700 5085 50  0001 C CNN
+F 3 "http://www.ttelectronics.com/sites/default/files/download-files/Datasheet_RotaryEncoder_EN12Series.pdf" H 6800 5185 50  0001 C CNN
+F 4 "987-1399-ND" H 6800 4925 60  0001 C CNN "Digikey"
+	1    6800 4925
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A0B9013
+P 6975 4225
+F 0 "#PWR?" H 6975 3975 50  0001 C CNN
+F 1 "GND" H 6975 4075 50  0000 C CNN
+F 2 "" H 6975 4225 50  0001 C CNN
+F 3 "" H 6975 4225 50  0001 C CNN
+	1    6975 4225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 4525 6700 4625
+$Comp
+L R R?
+U 1 1 5A0BA92C
+P 7175 4275
+F 0 "R?" V 7255 4275 50  0000 C CNN
+F 1 "10k" V 7175 4275 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 7105 4275 50  0001 C CNN
+F 3 "" H 7175 4275 50  0001 C CNN
+F 4 "311-10KGRCT-ND" V 7175 4275 60  0001 C CNN "Digikey"
+	1    7175 4275
+	-1   0    0    -1  
+$EndComp
+Text GLabel 7175 4125 1    60   UnSpc ~ 0
+3V3
+$Comp
+L C C?
+U 1 1 5A0BA933
+P 7725 4800
+F 0 "C?" H 7750 4900 50  0000 L CNN
+F 1 "10n" H 7750 4700 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" H 7763 4650 50  0001 C CNN
+F 3 "" H 7725 4800 50  0001 C CNN
+F 4 "311-1085-1-ND" H 7725 4800 60  0001 C CNN "Digikey"
+	1    7725 4800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A0BA939
+P 7725 4950
+F 0 "#PWR?" H 7725 4700 50  0001 C CNN
+F 1 "GND" H 7725 4800 50  0000 C CNN
+F 2 "" H 7725 4950 50  0001 C CNN
+F 3 "" H 7725 4950 50  0001 C CNN
+	1    7725 4950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7175 4425 7175 4525
+Wire Wire Line
+	6900 4525 7175 4525
+Wire Wire Line
+	7175 4525 7275 4525
+Wire Wire Line
+	6900 4525 6900 4625
+Wire Wire Line
+	6800 4625 6800 4175
+Wire Wire Line
+	6800 4175 6975 4175
+Wire Wire Line
+	6975 4175 6975 4225
+$Comp
+L R R?
+U 1 1 5A0BAE2A
+P 7425 4525
+F 0 "R?" V 7505 4525 50  0000 C CNN
+F 1 "10k" V 7425 4525 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 7355 4525 50  0001 C CNN
+F 3 "" H 7425 4525 50  0001 C CNN
+F 4 "311-10KGRCT-ND" V 7425 4525 60  0001 C CNN "Digikey"
+	1    7425 4525
+	0    1    -1   0   
+$EndComp
+Connection ~ 7175 4525
+Wire Wire Line
+	7575 4525 7725 4525
+Wire Wire Line
+	7725 4525 7825 4525
+Wire Wire Line
+	7725 4525 7725 4650
+Text GLabel 7825 4525 2    60   Output ~ 0
+ROT_ENC_12
+Connection ~ 7725 4525
+$Comp
+L R R?
+U 1 1 5A0BE49B
+P 6425 4275
+F 0 "R?" V 6505 4275 50  0000 C CNN
+F 1 "10k" V 6425 4275 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 6355 4275 50  0001 C CNN
+F 3 "" H 6425 4275 50  0001 C CNN
+F 4 "311-10KGRCT-ND" V 6425 4275 60  0001 C CNN "Digikey"
+	1    6425 4275
+	1    0    0    -1  
+$EndComp
+Text GLabel 6425 4125 1    60   UnSpc ~ 0
+3V3
+$Comp
+L C C?
+U 1 1 5A0BE4A3
+P 5875 4800
+F 0 "C?" H 5900 4900 50  0000 L CNN
+F 1 "10n" H 5900 4700 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" H 5913 4650 50  0001 C CNN
+F 3 "" H 5875 4800 50  0001 C CNN
+F 4 "311-1085-1-ND" H 5875 4800 60  0001 C CNN "Digikey"
+	1    5875 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A0BE4A9
+P 5875 4950
+F 0 "#PWR?" H 5875 4700 50  0001 C CNN
+F 1 "GND" H 5875 4800 50  0000 C CNN
+F 2 "" H 5875 4950 50  0001 C CNN
+F 3 "" H 5875 4950 50  0001 C CNN
+	1    5875 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6425 4425 6425 4525
+Wire Wire Line
+	6700 4525 6425 4525
+Wire Wire Line
+	6425 4525 6325 4525
+$Comp
+L R R?
+U 1 1 5A0BE4B3
+P 6175 4525
+F 0 "R?" V 6255 4525 50  0000 C CNN
+F 1 "10k" V 6175 4525 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 6105 4525 50  0001 C CNN
+F 3 "" H 6175 4525 50  0001 C CNN
+F 4 "311-10KGRCT-ND" V 6175 4525 60  0001 C CNN "Digikey"
+	1    6175 4525
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6425 4525
+Wire Wire Line
+	6025 4525 5875 4525
+Wire Wire Line
+	5875 4525 5775 4525
+Wire Wire Line
+	5875 4525 5875 4650
+Text GLabel 5775 4525 0    60   Output ~ 0
+ROT_ENC_11
+Connection ~ 5875 4525
+$Comp
+L Rotary_Encoder SW?
+U 1 1 5A0C062E
+P 6800 3375
+F 0 "SW?" H 6800 3635 50  0000 C CNN
+F 1 "Rotary_Encoder" H 6800 3115 50  0000 C CNN
+F 2 "MyTactileSW:ROT_ENC_EN12_TT_Electronics_No_Switch" H 6700 3535 50  0001 C CNN
+F 3 "http://www.ttelectronics.com/sites/default/files/download-files/Datasheet_RotaryEncoder_EN12Series.pdf" H 6800 3635 50  0001 C CNN
+F 4 "987-1399-ND" H 6800 3375 60  0001 C CNN "Digikey"
+	1    6800 3375
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A0C0634
+P 6975 2675
+F 0 "#PWR?" H 6975 2425 50  0001 C CNN
+F 1 "GND" H 6975 2525 50  0000 C CNN
+F 2 "" H 6975 2675 50  0001 C CNN
+F 3 "" H 6975 2675 50  0001 C CNN
+	1    6975 2675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 2975 6700 3075
+$Comp
+L R R?
+U 1 1 5A0C063C
+P 7175 2725
+F 0 "R?" V 7255 2725 50  0000 C CNN
+F 1 "10k" V 7175 2725 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 7105 2725 50  0001 C CNN
+F 3 "" H 7175 2725 50  0001 C CNN
+F 4 "311-10KGRCT-ND" V 7175 2725 60  0001 C CNN "Digikey"
+	1    7175 2725
+	-1   0    0    -1  
+$EndComp
+Text GLabel 7175 2575 1    60   UnSpc ~ 0
+3V3
+$Comp
+L C C?
+U 1 1 5A0C0644
+P 7725 3250
+F 0 "C?" H 7750 3350 50  0000 L CNN
+F 1 "10n" H 7750 3150 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" H 7763 3100 50  0001 C CNN
+F 3 "" H 7725 3250 50  0001 C CNN
+F 4 "311-1085-1-ND" H 7725 3250 60  0001 C CNN "Digikey"
+	1    7725 3250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A0C064A
+P 7725 3400
+F 0 "#PWR?" H 7725 3150 50  0001 C CNN
+F 1 "GND" H 7725 3250 50  0000 C CNN
+F 2 "" H 7725 3400 50  0001 C CNN
+F 3 "" H 7725 3400 50  0001 C CNN
+	1    7725 3400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7175 2875 7175 2975
+Wire Wire Line
+	6900 2975 7175 2975
+Wire Wire Line
+	7175 2975 7275 2975
+Wire Wire Line
+	6900 2975 6900 3075
+Wire Wire Line
+	6800 3075 6800 2625
+Wire Wire Line
+	6800 2625 6975 2625
+Wire Wire Line
+	6975 2625 6975 2675
+$Comp
+L R R?
+U 1 1 5A0C0658
+P 7425 2975
+F 0 "R?" V 7505 2975 50  0000 C CNN
+F 1 "10k" V 7425 2975 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 7355 2975 50  0001 C CNN
+F 3 "" H 7425 2975 50  0001 C CNN
+F 4 "311-10KGRCT-ND" V 7425 2975 60  0001 C CNN "Digikey"
+	1    7425 2975
+	0    1    -1   0   
+$EndComp
+Connection ~ 7175 2975
+Wire Wire Line
+	7575 2975 7725 2975
+Wire Wire Line
+	7725 2975 7825 2975
+Wire Wire Line
+	7725 2975 7725 3100
+Text GLabel 7825 2975 2    60   Output ~ 0
+ROT_ENC_12
+Connection ~ 7725 2975
+$Comp
+L R R?
+U 1 1 5A0C0665
+P 6425 2725
+F 0 "R?" V 6505 2725 50  0000 C CNN
+F 1 "10k" V 6425 2725 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 6355 2725 50  0001 C CNN
+F 3 "" H 6425 2725 50  0001 C CNN
+F 4 "311-10KGRCT-ND" V 6425 2725 60  0001 C CNN "Digikey"
+	1    6425 2725
+	1    0    0    -1  
+$EndComp
+Text GLabel 6425 2575 1    60   UnSpc ~ 0
+3V3
+$Comp
+L C C?
+U 1 1 5A0C066D
+P 5875 3250
+F 0 "C?" H 5900 3350 50  0000 L CNN
+F 1 "10n" H 5900 3150 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" H 5913 3100 50  0001 C CNN
+F 3 "" H 5875 3250 50  0001 C CNN
+F 4 "311-1085-1-ND" H 5875 3250 60  0001 C CNN "Digikey"
+	1    5875 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A0C0673
+P 5875 3400
+F 0 "#PWR?" H 5875 3150 50  0001 C CNN
+F 1 "GND" H 5875 3250 50  0000 C CNN
+F 2 "" H 5875 3400 50  0001 C CNN
+F 3 "" H 5875 3400 50  0001 C CNN
+	1    5875 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6425 2875 6425 2975
+Wire Wire Line
+	6700 2975 6425 2975
+Wire Wire Line
+	6425 2975 6325 2975
+$Comp
+L R R?
+U 1 1 5A0C067D
+P 6175 2975
+F 0 "R?" V 6255 2975 50  0000 C CNN
+F 1 "10k" V 6175 2975 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 6105 2975 50  0001 C CNN
+F 3 "" H 6175 2975 50  0001 C CNN
+F 4 "311-10KGRCT-ND" V 6175 2975 60  0001 C CNN "Digikey"
+	1    6175 2975
+	0    -1   -1   0   
+$EndComp
+Connection ~ 6425 2975
+Wire Wire Line
+	6025 2975 5875 2975
+Wire Wire Line
+	5875 2975 5775 2975
+Wire Wire Line
+	5875 2975 5875 3100
+Text GLabel 5775 2975 0    60   Output ~ 0
+ROT_ENC_11
+Connection ~ 5875 2975
 $EndSCHEMATC
