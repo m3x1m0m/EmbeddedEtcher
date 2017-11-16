@@ -1,4 +1,4 @@
-update=tis 14 nov 2017 14:47:00
+update=ons 15 nov 2017 14:32:58
 version=1
 last_client=kicad
 [pcbnew]
@@ -63,3 +63,13 @@ LibName31=/home/maximilian/MyKiCadLibs/SchematicSymbols/mydacs
 LibName32=/home/maximilian/MyKiCadLibs/SchematicSymbols/mydcdcs
 LibName33=switches
 LibName34=/home/maximilian/MyKiCadLibs/SchematicSymbols/mytactilesw
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60

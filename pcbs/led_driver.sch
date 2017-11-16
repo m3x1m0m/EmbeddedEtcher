@@ -39,10 +39,10 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 37
-Title ""
-Date ""
+Title "Extension Board for the Nucleo64-F103RB"
+Date "2017-11-16"
 Rev ""
-Comp ""
+Comp "Uppsala University"
 Comment1 ""
 Comment2 ""
 Comment3 ""
