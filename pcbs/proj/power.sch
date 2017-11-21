@@ -308,7 +308,7 @@ U 1 1 5A0D7E56
 P 4810 2410
 F 0 "R198" V 4890 2410 50  0000 C CNN
 F 1 "0R" V 4810 2410 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206" V 4740 2410 50  0001 C CNN
+F 2 "Resistors_SMD:R_2512_HandSoldering" V 4740 2410 50  0001 C CNN
 F 3 "" H 4810 2410 50  0001 C CNN
 F 4 "311-0.0ERCT-ND" V 4810 2410 60  0001 C CNN "Digikey"
 	1    4810 2410
@@ -590,4 +590,6 @@ F 3 "" H 5475 3960 50  0001 C CNN
 $EndComp
 Text Notes 4830 3720 0    60   ~ 0
 Tell Kicad, that these voltages are externally driven.
+Text Notes 4060 1605 0    60   ~ 0
+Current Rating (IPC 2221)\n----------------------\nMax. Expected Current = 64 * 0.05 A = 3.2 A \nAbs. Max. Current (dT = 10 K, W = 1.6 mm) = 3.36 A 
 $EndSCHEMATC
