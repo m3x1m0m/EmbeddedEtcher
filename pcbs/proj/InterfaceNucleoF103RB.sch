@@ -331,7 +331,6 @@ NoConn ~ 3130 3365
 NoConn ~ 3130 3465
 NoConn ~ 3130 2965
 NoConn ~ 3130 2865
-NoConn ~ 2630 2765
 NoConn ~ 2630 3165
 NoConn ~ 2630 3265
 NoConn ~ 2630 3765
@@ -350,4 +349,12 @@ NoConn ~ 2630 4165
 NoConn ~ 2630 3965
 NoConn ~ 2630 3465
 NoConn ~ 3130 3965
+Text GLabel 2630 2765 0    47   UnSpc ~ 0
+PD2
+Text GLabel 2405 6590 0    47   UnSpc ~ 0
+PD2
+Text GLabel 2580 6590 2    47   UnSpc ~ 0
+LIGHT_INT
+Wire Wire Line
+	2405 6590 2580 6590
 $EndSCHEMATC

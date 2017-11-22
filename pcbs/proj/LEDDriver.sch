@@ -621,9 +621,9 @@ F 4 "490-6403-6-ND" H 9875 2620 60  0001 C CNN "Digikey"
 	1    9875 2620
 	-1   0    0    -1  
 $EndComp
-Text GLabel 7935 2545 0    47   UnSpc ~ 0
-I2C_SDA
 Text GLabel 7935 2645 0    47   UnSpc ~ 0
+I2C_SDA
+Text GLabel 7935 2545 0    47   UnSpc ~ 0
 I2C_SCL
 $Comp
 L R R1
@@ -767,7 +767,6 @@ Text Notes 2950 5650 0    60   ~ 0
 This connector connects the driver to the LEDs.
 Text Notes 1700 900  0    60   ~ 0
 32 x 2 = 64 stages. 1 stage consists out of 4 LEDs.
-NoConn ~ 8150 5100
 Wire Wire Line
 	2530 1170 2565 1170
 Wire Wire Line
@@ -957,15 +956,15 @@ Wire Wire Line
 	8560 3930 8560 3820
 Connection ~ 8560 3820
 Wire Wire Line
-	8010 3930 7570 3930
-Wire Wire Line
 	7570 3450 7570 4080
 Wire Wire Line
 	7570 3450 7750 3450
-Connection ~ 7570 3930
 Wire Wire Line
 	8840 3780 8840 3730
 Connection ~ 8840 3730
 Text GLabel 10015 2445 2    60   UnSpc ~ 0
 3V3
+Text GLabel 8150 5100 0    47   UnSpc ~ 0
+LIGHT_INT
+NoConn ~ 8010 3930
 $EndSCHEMATC
