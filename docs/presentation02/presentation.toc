@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Papers}{3}{0}{1}
+\beamer@sectionintoc {2}{Market Analysis}{9}{0}{2}
