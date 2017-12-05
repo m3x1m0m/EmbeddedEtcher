@@ -592,4 +592,6 @@ Text Notes 4830 3720 0    60   ~ 0
 Tell Kicad, that these voltages are externally driven.
 Text Notes 4060 1605 0    60   ~ 0
 Current Rating (IPC 2221)\n----------------------\nMax. Expected Current = 64 * 0.05 A = 3.2 A \nAbs. Max. Current (dT = 10 K, W = 1.6 mm) = 3.36 A 
+Text Notes 1700 6650 0    60   ~ 0
+4.5 V to 24 V, max. 1A, 1 MHz
 $EndSCHEMATC
