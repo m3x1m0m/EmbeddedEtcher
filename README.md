@@ -24,15 +24,15 @@ iron(III) chloride (FeCl<sub>3</sub>) dissolved in water of course.
 This PCB is made to fit the [Nucleo-F103RB](http://www.st.com/en/evaluation-tools/nucleo-f103rb.html)
 development board from STM. Features:
 - 64 LED driving stages
-- 3.36 A and 26 V max. input (0.05 A per stage results in 3.2 A)
-- 0.1 A max. per stage
+- 6.4 A and 24 V max. input (0.1 A per stage)
+- 0.2 A max. and 350 mW dissipation max. per stage 
 - 10 Bit DAC to steer the driver
 - Optional potentiometer to steer the drivers
 - Control-loop for constant current
 - Feedback amplification to get a high current resolution
 - I2C header
 - SPI header
-- 2 rotary encoder and 1 tactile switch
+- 2 rotary encoders and 1 tactile switch
  
 ![3D Preview from KiCad (2).](https://github.com/m3x1m0m/ecthing/blob/master/pcbs/extension_board/output/3d_pic_2.jpg)
   
