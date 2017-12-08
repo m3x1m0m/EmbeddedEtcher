@@ -308,7 +308,6 @@ NoConn ~ 4155 3865
 NoConn ~ 4155 3965
 NoConn ~ 4155 3765
 NoConn ~ 4155 3665
-NoConn ~ 4655 3865
 NoConn ~ 4655 3965
 NoConn ~ 4655 4065
 NoConn ~ 4655 4165
@@ -377,4 +376,6 @@ Wire Wire Line
 	4985 5770 5160 5770
 Text GLabel 4655 3265 2    47   UnSpc ~ 0
 PA6
+Text GLabel 4655 3865 2    47   UnSpc ~ 0
+PB10
 $EndSCHEMATC
