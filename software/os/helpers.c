@@ -6,6 +6,7 @@
  */
 
 #include "stm32f10x.h"
+#include "helpers.h"
 #include <stdlib.h>
 
 uint8_t osItoa(int iint, char* iochar, size_t ibuffsize, size_t* obuffsize)
