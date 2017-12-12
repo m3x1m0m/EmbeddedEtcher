@@ -8,19 +8,15 @@
 #ifndef OS_QUEUES_H_
 #define OS_QUEUES_H_
 
-#include "stm32f10x.h"
-#include <stdlib.h>
+//--------------Include------------------
+
+#include<stm32f10x.h>
+#include"ostypes.h"
+#include<stdlib.h>
 
 #define MAX_QUEUE_SIZE 64
 
-typedef struct
-{
-	uint8_t write_p;
-	uint8_t read_p;
-	/* Gives you the possibility to use the q with every data type. */
-	void* start;
-	size_t varsize;
-} osQUEUE_t;
+//--------------Functions----------------
 
 void osQInit(osQUEUE_t* q, size_t ivarsize, void* istart);
 

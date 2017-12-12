@@ -5,24 +5,45 @@
 #include"heap.h"
 #include"error.h"
 #include"ostypes.h"
+#include"printf.h"
 
 //--------------Functions----------------
 
+/** Gives the index of the left child of a node.
+ *
+ * @param iind Index of the node itself.
+ * @retval Index of the left child of the node.
+ */
 static inline uint8_t osHeapChildL(uint8_t iind)
 {
   return (2*iind + 1);  
 }
 
+/** Gives the index of the right child of a node.
+ *
+ * @param iind Index of the node itself.
+ * @retval Index of the left child of the node.
+ */
 static inline uint8_t osHeapChildR(uint8_t iind)
 {
   return (2*iind + 2);  
 }
 
+/** Gives the index of the parent of a node.
+ *
+ * @param iind Index of the node itself.
+ * @retval Index of the left child of the node.
+ */
 static inline uint8_t osHeapParent(uint8_t iind)
 {
   return (iind-1)/2;  
 }
 
+/** Gives the size of the heap.
+ *
+ * @param ioarray Array where the heap is stored.
+ * @retval Size of the heap.
+ */
 static inline uint8_t osHeapSize(osHeapNode_t* ioarray)
 {
   int i;
@@ -34,9 +55,28 @@ static inline uint8_t osHeapSize(osHeapNode_t* ioarray)
   return i;
 }
 
+/** Delete one element in the heap.
+ *
+ * @param ioarray Array where the heap is stored.
+ * @retval Index of the left child of the node.
+ */
 static inline void osHeapDelete(osHeapNode_t* ioarray, uint8_t ii)
 {
    ioarray[ii] = NULL; 
+}
+
+/** Swap two elements in the heap.
+ *
+ * @param ioarray Array where the heap is stored.
+ * @param ia Index where element a is stored.
+ * @param ib Index where element b is stored.
+ */
+static inline void osHeapSwap(osHeapNode_t* ioarray, uint8_t ia, uint8_t ib)
+{
+  osHeapNode_t z;
+  z = ioarray[ia];
+  ioarray[ia] = ioarray[ib];
+  ioarray[ib] = z;
 }
 
 void osHeapInit(osHeapNode_t* ioarray)
@@ -45,14 +85,6 @@ void osHeapInit(osHeapNode_t* ioarray)
   {
     osHeapDelete(ioarray, i); 
   } 
-}
-
-static inline void osHeapSwap(osHeapNode_t* ioarray, uint8_t ia, uint8_t ib)
-{
-  osHeapNode_t z;
-  z = ioarray[ia];
-  ioarray[ia] = ioarray[ib];
-  ioarray[ib] = z;
 }
 
 void osHeapHeapify(osHeapNode_t* ioarray, uint8_t iind)
@@ -149,9 +181,17 @@ void osHeapPrintS(osHeapNode_t* ioarray)
   {
     if(ioarray[i] == 0)
       continue;
-    printf("%d ", ioarray[i]->priority);   
+	#ifdef X86_TEST_ENVIRONMENT
+    printf("%d ", ioarray[i]->priority);
+	#else
+	osPrintf("%d ", ioarray[i]->priority);
+	#endif
   } 
-  printf("\n");
+	#ifdef X86_TEST_ENVIRONMENT
+	printf("\n");
+	#else
+	osPrintf("\n\r");
+	#endif
 }
 
 uint8_t osHeapIsEmpty(osHeapNode_t* ioarray)

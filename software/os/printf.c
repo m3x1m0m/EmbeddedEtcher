@@ -12,9 +12,13 @@
 #include "helpers.h"
 #include "printf.h"
 #include "../platform/usart.h"
+#include "ossettings.h"
 
 /** Increment index for a char buffer savely, preventing overflows.
  *
+ * @param ioindex Index, that is supposed to be manipulated.
+ * @param ibuffsize Buffer size, which should not be exceeded.
+ * @retval 1 (SUCCESS) or 0 (FAILURE).
  */
 static inline uint8_t osPreventBuffOv(uint* ioindex, size_t ibuffsize)
 {
@@ -27,8 +31,15 @@ static inline uint8_t osPreventBuffOv(uint* ioindex, size_t ibuffsize)
 
 /** Parsing for floats within printf.
  *
+ * @param iobuffer Buffer where the formated string ends up.
+ * @param ibuffsize Size of the iobuffer for security reasons.
+ * @param iformat Pointer to the format string from the user.
+ * @param i Pointer to the index where to write in the iobuffer.
+ * @param ifloat Float which shall be printed nicely.
+ * @param iflag Indicator if the user wants a certain amount of decimals.
+ * @retval Characters printed (SUCCESS) or -1 (FAILURE).
  */
-static void osParseFloat(char* iobuffer, size_t ibuffsize, const char** iformat, uint* i, double ifloat, uint8_t flag)
+static void osParseFloat(char* iobuffer, size_t ibuffsize, const char** iformat, uint* i, double ifloat, uint8_t iflag)
 {
 	int temp_int;
 	size_t temp_buffsize;
@@ -47,7 +58,7 @@ static void osParseFloat(char* iobuffer, size_t ibuffsize, const char** iformat,
 		iobuffer[*i] = temp_string[j];
 		osPreventBuffOv(i, ibuffsize);
 	}
-	if(!flag)
+	if(!iflag)
 		float_decimals = 4;
 	else
 	{
@@ -76,13 +87,10 @@ static void osParseFloat(char* iobuffer, size_t ibuffsize, const char** iformat,
 		osPreventBuffOv(i, ibuffsize);
 	}
 	/* Get rid of the f. */
-	if(flag)
+	if(iflag)
 		(*iformat)++;
 }
 
-/** printf implementation where the magic happens.
- *
- */
 int osVPrintf(va_list iarguments, char* iobuffer, size_t ibuffsize, const char* iformat)
 {
 	uint i = 0;
@@ -150,6 +158,19 @@ int osVPrintf(va_list iarguments, char* iobuffer, size_t ibuffsize, const char* 
 		}
 		else
 		{
+			/* If you are too lazy to always type \r\n */
+			#ifdef CONVERT_NEWLINE
+			if( (*iformat) == '\n' )
+			{
+				/* Copy \n */
+				iobuffer[i] = *iformat;
+				iformat++;
+				osPreventBuffOv(&i, ibuffsize);
+				/* Add \r */
+				iobuffer[i] = '\r';
+				osPreventBuffOv(&i, ibuffsize);
+			}
+			#endif
 			/* Copy characters into buffer. */
 			iobuffer[i] = *iformat;
 			iformat++;
@@ -161,17 +182,6 @@ int osVPrintf(va_list iarguments, char* iobuffer, size_t ibuffsize, const char* 
 	return (i+1);
 }
 
-/** printf to be used by the OS user. Can be ported to another platform easily
- * by just using another function to transmit one string with the USART.
- *
- * @param iformat Currently supported are
-		%d		integers
-		%c 		single characters
-		%s 		C strings
-		%f 		Floats with 4 decimals
-		%.xf 	Floats with x decimals
- * @retval Returns the number of characters printed (SUCCESS) or -1 (FAILURE).
- */
 int osPrintf(const char* iformat, ...)
 {
 	va_list arguments;

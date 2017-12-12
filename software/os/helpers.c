@@ -24,6 +24,12 @@ uint8_t osItoa(int iint, char* iochar, size_t ibuffsize, size_t* obuffsize)
 	  iint *= -1;
 	  isnegative = 1;
   }
+
+  if(iint == 0)
+  {
+	  z[i] = '0';
+	  i++;
+  }
   /* Take last digit and convert until iint is gone. */
   while(iint > 0)
   {
@@ -50,6 +56,7 @@ uint8_t osItoa(int iint, char* iochar, size_t ibuffsize, size_t* obuffsize)
     iochar[j] = z[i-j-1];
     j--;
   }
-  *obuffsize = i;
+  if(obuffsize != NULL)
+	  *obuffsize = i;
   return 1;
 }

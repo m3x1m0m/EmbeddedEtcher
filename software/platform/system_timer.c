@@ -5,15 +5,15 @@
  *      Author: maximilian
  */
 
-#include "stm32f10x.h"
-#include "stm32f10x_flash.h"
-#include "stm32f10x_rcc.h"
+//--------------Includes-----------------
 
-#define ALIVE_PULSE_LENGTH 200
+#include<stm32f10x.h>
+#include<stm32f10x_flash.h>
+#include<stm32f10x_rcc.h>
+#include"../os/scheduler.h"
+#include"../os/ossettings.h"
 
-static volatile uint32_t ticky = 0;
-
-void InitAliveLED(void)
+void initAliveLED(void)
 {
 	/* Activate clock for peripheral. */
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
@@ -27,7 +27,14 @@ void InitAliveLED(void)
 	GPIO_Init (GPIOA , & GPIO_InitStructure );
 }
 
-void InitClock(void)
+void toggleAliveLED(void)
+{
+	static volatile uint8_t led_stat = 0;
+	led_stat = !led_stat;
+	GPIO_WriteBit(GPIOA, GPIO_Pin_5, led_stat);
+}
+
+void initClock(void)
 {
 	/* Configure all clocks to max for best performance.
 	   If there are EMI, power, or noise problems, try slowing the clocks.*/
@@ -51,20 +58,13 @@ void InitClock(void)
 	RCC_PCLK1Config(RCC_HCLK_Div8);
 	RCC_PCLK2Config(RCC_HCLK_Div8);
 
-	/*  Configure Cortex-M System Tick Timer to tick every ms.*/
+	/*  Configure Cortex-M System Tick Timer to tick as the os user defined.*/
 	SystemCoreClockUpdate();
-	SysTick_Config(SystemCoreClock / 1000);
+	SysTick_Config( (SystemCoreClock/1000) * SYS_TICK_PERIOD_MS );
 }
 
 void SysTick_Handler(void)
 {
-	static volatile uint8_t led_stat = 0;
-	if(ticky == ALIVE_PULSE_LENGTH)
-	{
-		led_stat = !led_stat;
-		GPIO_WriteBit(GPIOA, GPIO_Pin_5, led_stat);
-		ticky = 0;
-	}
-	else
-		ticky++;
+	// TODO: For porting use another timer here to call the scheduler.
+	osRunScheduler();
 }
