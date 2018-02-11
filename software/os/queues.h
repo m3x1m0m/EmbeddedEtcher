@@ -1,8 +1,8 @@
-/*
- * queues.h
- *
- *  Created on: Dec 6, 2017
- *      Author: maximilian
+/**
+ * @file queues.h
+ * @author Maximilian Stiefel
+ * @date 8 Jan 2018
+ * @brief Implementation for queues.
  */
 
 #ifndef OS_QUEUES_H_
@@ -14,14 +14,31 @@
 #include"ostypes.h"
 #include<stdlib.h>
 
-#define MAX_QUEUE_SIZE 64
-
 //--------------Functions----------------
 
-void osQInit(osQUEUE_t* q, size_t ivarsize, void* istart);
+/** Function to initialize a queue properly.
+ *
+ * @param q Pointer to the memory where the q is stored.
+ * @param ivarsize Size of the variable type stored in the q in bytes.
+ * @param iqsize Number of slots of the q.
+ * @param istart Pointer to the array where the actual data of the q is stored.
+ */
+void osQInit(osQUEUE_t* q, size_t ivarsize, uint16_t iqsize, void* istart);
 
-uint8_t osEnqueue(osQUEUE_t* rx_q, void* data);
+/** Copy data to the q.
+ *
+ * @param q Q we are talking about.
+ * @param data Pointer to a local variable where data is stored.
+ * @retval 1 (data successfully copied) or 0 (q is full).
+ */
+uint8_t osEnqueue(osQUEUE_t* q, void* data);
 
-uint8_t osDequeue(osQUEUE_t* tx_q, void* data);
+/** Copy data from the q.
+ *
+ * @param q Q we are talking about.
+ * @param data Pointer to a local variable where the data from the q shall end up.
+ * @retval 1 (data successfully copied) or 0 (q is empty).
+ */
+uint8_t osDequeue(osQUEUE_t* q, void* data);
 
 #endif /* OS_QUEUES_H_ */

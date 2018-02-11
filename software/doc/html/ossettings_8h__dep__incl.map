@@ -1,0 +1,7 @@
+<map id="os/ossettings.h" name="os/ossettings.h">
+<area shape="rect" id="node2" href="$ostypes_8h.html" title="Different types the operating system uses are defined here. " alt="" coords="135,80,233,107"/>
+<area shape="rect" id="node3" href="$error_8h.html" title="Error logging functionalities of the operating system. " alt="" coords="5,155,83,181"/>
+<area shape="rect" id="node6" href="$scheduler_8h.html" title="Scheduler of the operating system. " alt="" coords="328,155,435,181"/>
+<area shape="rect" id="node4" href="$heap_8h.html" title="Heap implementation for the tasks of the operating system. " alt="" coords="107,155,186,181"/>
+<area shape="rect" id="node5" href="$queues_8h.html" title="Implementation for queues. " alt="" coords="211,155,304,181"/>
+</map>

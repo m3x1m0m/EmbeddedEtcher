@@ -5,9 +5,11 @@
  *      Author: maximilian
  */
 
-#include "stm32f10x.h"
-#include "helpers.h"
-#include <stdlib.h>
+//--------------Includes-----------------
+#include"stm32f10x.h"
+#include"helpers.h"
+#include"error.h"
+#include<stdlib.h>
 
 uint8_t osItoa(int iint, char* iochar, size_t ibuffsize, size_t* obuffsize)
 {
@@ -37,7 +39,10 @@ uint8_t osItoa(int iint, char* iochar, size_t ibuffsize, size_t* obuffsize)
     iint /= 10;
     i++;
     if( ((buff_size_1 - 1) < (unsigned int)i) || ((buff_size_2 - 1) < (unsigned int)i))
-      return 0;
+    {
+    	THROW_ERROR(E_BUFFER_OVERFLOW);
+    	return 0;
+    }
   }
 
   /* Fix the minus symbol. */

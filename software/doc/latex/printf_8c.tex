@@ -1,0 +1,44 @@
+\hypertarget{printf_8c}{}\section{os/printf.c File Reference}
+\label{printf_8c}\index{os/printf.\+c@{os/printf.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stm32f10x.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}helpers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}printf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../platform/usart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ossettings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\newline
+Include dependency graph for printf.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{printf_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{printf_8c_ae2b707b3f94f0857c447e83c833b068a}{os\+Printf} (const char $\ast$iformat,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{printf_8c_ae2b707b3f94f0857c447e83c833b068a}\label{printf_8c_ae2b707b3f94f0857c447e83c833b068a}} 
+\index{printf.\+c@{printf.\+c}!os\+Printf@{os\+Printf}}
+\index{os\+Printf@{os\+Printf}!printf.\+c@{printf.\+c}}
+\subsubsection{\texorpdfstring{os\+Printf()}{osPrintf()}}
+{\footnotesize\ttfamily int os\+Printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{iformat,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+printf to be used by the OS user. Can be ported to another platform easily by just using another function to transmit one string with the U\+S\+A\+RT.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iformat} & Currently supported are d integers c single characters s C strings f Floats with 4 decimals \%.xf Floats with x decimals \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the number of characters printed (S\+U\+C\+C\+E\+SS) or -\/1 (F\+A\+I\+L\+U\+RE). \\
+\hline
+\end{DoxyRetVals}

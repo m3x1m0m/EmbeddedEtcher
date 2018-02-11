@@ -1,0 +1,156 @@
+\hypertarget{scheduler_8h}{}\section{os/scheduler.h File Reference}
+\label{scheduler_8h}\index{os/scheduler.\+h@{os/scheduler.\+h}}
+
+
+Scheduler of the operating system.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ossettings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ostypes.\+h\char`\"{}}\newline
+Include dependency graph for scheduler.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{scheduler_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{scheduler_8h_ac59673f226b3291f835a0faf010ad409}{os\+Scheduler\+Get\+SysT} (void)
+\item 
+uint8\+\_\+t \hyperlink{scheduler_8h_a76739fd1872ff1f867ea41e853131a21}{os\+Task\+Create} (void($\ast$ifnc\+\_\+ptr)(void $\ast$), char $\ast$itask\+\_\+name, void $\ast$iarguments, uint8\+\_\+t ipriority, const \hyperlink{structos_t_c_b__t}{os\+T\+C\+B\+\_\+t} $\ast$o\+Task\+Handle)
+\item 
+void \hyperlink{scheduler_8h_a790ca9c0d2362305790eb3c4002e3da9}{os\+Task\+Delete} (\hyperlink{structos_t_c_b__t}{os\+T\+C\+B\+\_\+t} $\ast$iotask)
+\item 
+void \hyperlink{scheduler_8h_ae1e7565174265c0107749d7cdf486c01}{os\+Task\+Delay} (uint8\+\_\+t idelay)
+\item 
+void \hyperlink{scheduler_8h_ae4c7af5e41838a9299b00d455fb8f454}{os\+Task\+Delay\+Until} (uint32\+\_\+t iwakeup\+\_\+time, uint8\+\_\+t idelay)
+\item 
+void \hyperlink{scheduler_8h_ada28e10d8b44223004cab16b201df2d7}{os\+Run\+Scheduler} (void)
+\item 
+void \hyperlink{scheduler_8h_acd27cd0dcb4e193125968decdd238ff9}{os\+Print\+Task} (uint8\+\_\+t iindex)
+\item 
+void \hyperlink{scheduler_8h_ad4967a4ccbd9e8901a1d79a9ee3ca79b}{os\+Print\+All\+Tasks} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Scheduler of the operating system. 
+
+\begin{DoxyAuthor}{Author}
+Maximilian Stiefel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+8 Jan 2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{scheduler_8h_ad4967a4ccbd9e8901a1d79a9ee3ca79b}\label{scheduler_8h_ad4967a4ccbd9e8901a1d79a9ee3ca79b}} 
+\index{scheduler.\+h@{scheduler.\+h}!os\+Print\+All\+Tasks@{os\+Print\+All\+Tasks}}
+\index{os\+Print\+All\+Tasks@{os\+Print\+All\+Tasks}!scheduler.\+h@{scheduler.\+h}}
+\subsubsection{\texorpdfstring{os\+Print\+All\+Tasks()}{osPrintAllTasks()}}
+{\footnotesize\ttfamily void os\+Print\+All\+Tasks (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Print all information about all tasks. \mbox{\Hypertarget{scheduler_8h_acd27cd0dcb4e193125968decdd238ff9}\label{scheduler_8h_acd27cd0dcb4e193125968decdd238ff9}} 
+\index{scheduler.\+h@{scheduler.\+h}!os\+Print\+Task@{os\+Print\+Task}}
+\index{os\+Print\+Task@{os\+Print\+Task}!scheduler.\+h@{scheduler.\+h}}
+\subsubsection{\texorpdfstring{os\+Print\+Task()}{osPrintTask()}}
+{\footnotesize\ttfamily void os\+Print\+Task (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{iindex }\end{DoxyParamCaption})}
+
+Print all information about one task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iindex} & Index in the T\+CB array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{scheduler_8h_ada28e10d8b44223004cab16b201df2d7}\label{scheduler_8h_ada28e10d8b44223004cab16b201df2d7}} 
+\index{scheduler.\+h@{scheduler.\+h}!os\+Run\+Scheduler@{os\+Run\+Scheduler}}
+\index{os\+Run\+Scheduler@{os\+Run\+Scheduler}!scheduler.\+h@{scheduler.\+h}}
+\subsubsection{\texorpdfstring{os\+Run\+Scheduler()}{osRunScheduler()}}
+{\footnotesize\ttfamily void os\+Run\+Scheduler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+System core. Scheduler needs to be executed by a timer interrupt. \mbox{\Hypertarget{scheduler_8h_ac59673f226b3291f835a0faf010ad409}\label{scheduler_8h_ac59673f226b3291f835a0faf010ad409}} 
+\index{scheduler.\+h@{scheduler.\+h}!os\+Scheduler\+Get\+SysT@{os\+Scheduler\+Get\+SysT}}
+\index{os\+Scheduler\+Get\+SysT@{os\+Scheduler\+Get\+SysT}!scheduler.\+h@{scheduler.\+h}}
+\subsubsection{\texorpdfstring{os\+Scheduler\+Get\+Sys\+T()}{osSchedulerGetSysT()}}
+{\footnotesize\ttfamily uint32\+\_\+t os\+Scheduler\+Get\+SysT (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get the system time.
+
+
+\begin{DoxyRetVals}{Return values}
+{\em Gives} & back the number of ticks since system has been initialized. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{scheduler_8h_a76739fd1872ff1f867ea41e853131a21}\label{scheduler_8h_a76739fd1872ff1f867ea41e853131a21}} 
+\index{scheduler.\+h@{scheduler.\+h}!os\+Task\+Create@{os\+Task\+Create}}
+\index{os\+Task\+Create@{os\+Task\+Create}!scheduler.\+h@{scheduler.\+h}}
+\subsubsection{\texorpdfstring{os\+Task\+Create()}{osTaskCreate()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Task\+Create (\begin{DoxyParamCaption}\item[{void($\ast$)(void $\ast$)}]{ifnc\+\_\+ptr,  }\item[{char $\ast$}]{itask\+\_\+name,  }\item[{void $\ast$}]{iarguments,  }\item[{uint8\+\_\+t}]{ipriority,  }\item[{const \hyperlink{structos_t_c_b__t}{os\+T\+C\+B\+\_\+t} $\ast$}]{o\+Task\+Handle }\end{DoxyParamCaption})}
+
+Spawn a task.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ifnc\+\_\+ptr} & Pointer to the task function. \\
+\hline
+{\em itask\+\_\+name} & Internal task name. \\
+\hline
+{\em iarguments} & Enables passing user-\/defined arguments to the task. \\
+\hline
+{\em ipriority} & A higher value means a higher priority of the task. \\
+\hline
+{\em o\+Task\+Handle} & Pointer to T\+CB. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (task has been spawned) or 0 (F\+A\+I\+L\+ED) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{scheduler_8h_ae1e7565174265c0107749d7cdf486c01}\label{scheduler_8h_ae1e7565174265c0107749d7cdf486c01}} 
+\index{scheduler.\+h@{scheduler.\+h}!os\+Task\+Delay@{os\+Task\+Delay}}
+\index{os\+Task\+Delay@{os\+Task\+Delay}!scheduler.\+h@{scheduler.\+h}}
+\subsubsection{\texorpdfstring{os\+Task\+Delay()}{osTaskDelay()}}
+{\footnotesize\ttfamily void os\+Task\+Delay (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{idelay }\end{DoxyParamCaption})}
+
+Delay function. DO N\+OT U\+SE F\+OR P\+E\+R\+I\+O\+D\+IC T\+A\+S\+K\+S!
+
+
+\begin{DoxyParams}{Parameters}
+{\em idelay} & Delay in system ticks. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{scheduler_8h_ae4c7af5e41838a9299b00d455fb8f454}\label{scheduler_8h_ae4c7af5e41838a9299b00d455fb8f454}} 
+\index{scheduler.\+h@{scheduler.\+h}!os\+Task\+Delay\+Until@{os\+Task\+Delay\+Until}}
+\index{os\+Task\+Delay\+Until@{os\+Task\+Delay\+Until}!scheduler.\+h@{scheduler.\+h}}
+\subsubsection{\texorpdfstring{os\+Task\+Delay\+Until()}{osTaskDelayUntil()}}
+{\footnotesize\ttfamily void os\+Task\+Delay\+Until (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{iwakeup\+\_\+time,  }\item[{uint8\+\_\+t}]{idelay }\end{DoxyParamCaption})}
+
+Delay until function. DO U\+SE F\+OR P\+E\+R\+I\+O\+D\+IC T\+A\+S\+K\+S!
+
+
+\begin{DoxyParams}{Parameters}
+{\em iwakeup\+\_\+time} & Time when the task execution started. \\
+\hline
+{\em idelay} & Number of system ticks until the task shall be executed again. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{scheduler_8h_a790ca9c0d2362305790eb3c4002e3da9}\label{scheduler_8h_a790ca9c0d2362305790eb3c4002e3da9}} 
+\index{scheduler.\+h@{scheduler.\+h}!os\+Task\+Delete@{os\+Task\+Delete}}
+\index{os\+Task\+Delete@{os\+Task\+Delete}!scheduler.\+h@{scheduler.\+h}}
+\subsubsection{\texorpdfstring{os\+Task\+Delete()}{osTaskDelete()}}
+{\footnotesize\ttfamily void os\+Task\+Delete (\begin{DoxyParamCaption}\item[{\hyperlink{structos_t_c_b__t}{os\+T\+C\+B\+\_\+t} $\ast$}]{iotask }\end{DoxyParamCaption})}
+
+Simply delete task by setting the function pointer to N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iotask} & Pointer to T\+CB. \\
+\hline
+\end{DoxyParams}

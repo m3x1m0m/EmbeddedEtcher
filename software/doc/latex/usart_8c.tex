@@ -1,0 +1,52 @@
+\hypertarget{usart_8c}{}\section{platform/usart.c File Reference}
+\label{usart_8c}\index{platform/usart.\+c@{platform/usart.\+c}}
+{\ttfamily \#include \char`\"{}usart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../os/queues.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f10x\+\_\+gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f10x\+\_\+usart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../os/error.\+h\char`\"{}}\newline
+Include dependency graph for usart.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usart_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{usart_8c_a7d08f26cbf4b00f400972b2df19bc78b}{usart2\+Init} (void)
+\item 
+void \hyperlink{usart_8c_a0ca6fd0e6f77921dd1123539857ba0a8}{U\+S\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler} (void)
+\item 
+uint8\+\_\+t \hyperlink{usart_8c_af67798b30466ae997de23584f384595e}{usart2\+Put\+String} (uint8\+\_\+t $\ast$word, size\+\_\+t size)
+\item 
+uint8\+\_\+t \hyperlink{usart_8c_ae9015c84b756436a139ad5cee89e781e}{usart2\+Get\+String} (uint8\+\_\+t $\ast$word, size\+\_\+t buff\+\_\+size, size\+\_\+t $\ast$string\+\_\+size)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{usart_8c_a0ca6fd0e6f77921dd1123539857ba0a8}\label{usart_8c_a0ca6fd0e6f77921dd1123539857ba0a8}} 
+\index{usart.\+c@{usart.\+c}!U\+S\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler@{U\+S\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler}}
+\index{U\+S\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler@{U\+S\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler}!usart.\+c@{usart.\+c}}
+\subsubsection{\texorpdfstring{U\+S\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler()}{USART2\_IRQHandler()}}
+{\footnotesize\ttfamily void U\+S\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{usart_8c_ae9015c84b756436a139ad5cee89e781e}\label{usart_8c_ae9015c84b756436a139ad5cee89e781e}} 
+\index{usart.\+c@{usart.\+c}!usart2\+Get\+String@{usart2\+Get\+String}}
+\index{usart2\+Get\+String@{usart2\+Get\+String}!usart.\+c@{usart.\+c}}
+\subsubsection{\texorpdfstring{usart2\+Get\+String()}{usart2GetString()}}
+{\footnotesize\ttfamily uint8\+\_\+t usart2\+Get\+String (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{word,  }\item[{size\+\_\+t}]{buff\+\_\+size,  }\item[{size\+\_\+t $\ast$}]{string\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{usart_8c_a7d08f26cbf4b00f400972b2df19bc78b}\label{usart_8c_a7d08f26cbf4b00f400972b2df19bc78b}} 
+\index{usart.\+c@{usart.\+c}!usart2\+Init@{usart2\+Init}}
+\index{usart2\+Init@{usart2\+Init}!usart.\+c@{usart.\+c}}
+\subsubsection{\texorpdfstring{usart2\+Init()}{usart2Init()}}
+{\footnotesize\ttfamily void usart2\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{usart_8c_af67798b30466ae997de23584f384595e}\label{usart_8c_af67798b30466ae997de23584f384595e}} 
+\index{usart.\+c@{usart.\+c}!usart2\+Put\+String@{usart2\+Put\+String}}
+\index{usart2\+Put\+String@{usart2\+Put\+String}!usart.\+c@{usart.\+c}}
+\subsubsection{\texorpdfstring{usart2\+Put\+String()}{usart2PutString()}}
+{\footnotesize\ttfamily uint8\+\_\+t usart2\+Put\+String (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{word,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+

@@ -8,9 +8,9 @@
 
 uint8_t osExplainError(const char* ifile, const uint8_t iline, const osError_t ierror, char* iomessage)
 { 
-  char z[10];
-  if( !osItoa(iline, z, sizeof(z), NULL) )
-    return 0;
+	char z[10];
+	if( !osItoa(iline, z, sizeof(z), NULL) )
+		return 0;
 	strcat(iomessage, ifile);
 	strcat(iomessage, ":");
 	strcat(iomessage, z);
@@ -33,6 +33,9 @@ uint8_t osExplainError(const char* ifile, const uint8_t iline, const osError_t i
 				return 0;
 			strcat(iomessage, z);
 			strcat(iomessage, ") is reached.\n");
+			break;
+		case E_USART_RX_BUFFER_OVERLOW:
+			strcat(iomessage, "The USART RX buffer overflowed.\n");
 			break;
 		default:
 			strcat(iomessage, "Unknown error or no explanation implemented yet.\n");
@@ -71,10 +74,10 @@ uint8_t osExplainWarning(const char* ifile, const uint8_t iline, const osWarning
 	return 1;
 }
 
-uint8_t osPrintWarning(const char* ifile, const int iline, const osWarning_t ierror)
+uint8_t osPrintWarning(const char* ifile, const int iline, const osWarning_t iwarning)
 {
 	char iomessage[MAX_MESSAGE_SIZE] = {'\0'};
-	osExplainError(ifile, iline, ierror, iomessage);
+	osExplainWarning(ifile, iline, iwarning, iomessage);
 	#ifdef X86_TEST_ENVIRONMENT
 	return printf("%s", iomessage);
 	#else

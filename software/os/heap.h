@@ -1,3 +1,11 @@
+/**
+ * @file heap.h
+ * @author Maximilian Stiefel
+ * @date 8 Jan 2018
+ * @brief Heap implementation for the tasks of the operating system.
+ */
+
+
 #ifndef OS_H_HEAP_
 #define OS_H_HEAP_
 

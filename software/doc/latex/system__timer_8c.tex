@@ -1,0 +1,52 @@
+\hypertarget{system__timer_8c}{}\section{platform/system\+\_\+timer.c File Reference}
+\label{system__timer_8c}\index{platform/system\+\_\+timer.\+c@{platform/system\+\_\+timer.\+c}}
+{\ttfamily \#include $<$stm32f10x.\+h$>$}\newline
+{\ttfamily \#include $<$stm32f10x\+\_\+flash.\+h$>$}\newline
+{\ttfamily \#include $<$stm32f10x\+\_\+rcc.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../os/scheduler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../os/ossettings.\+h\char`\"{}}\newline
+Include dependency graph for system\+\_\+timer.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{system__timer_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{system__timer_8c_aa2e1abc835e556904f718ede78c1df6f}{init\+Alive\+L\+ED} (void)
+\item 
+void \hyperlink{system__timer_8c_af9e6109b87e10db9303be55cffb97498}{toggle\+Alive\+L\+ED} (void)
+\item 
+void \hyperlink{system__timer_8c_a2ef37c6b4d5f172facf1a8cef7fcedd5}{init\+Clock} (void)
+\item 
+void \hyperlink{system__timer_8c_ab5e09814056d617c521549e542639b7e}{Sys\+Tick\+\_\+\+Handler} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{system__timer_8c_aa2e1abc835e556904f718ede78c1df6f}\label{system__timer_8c_aa2e1abc835e556904f718ede78c1df6f}} 
+\index{system\+\_\+timer.\+c@{system\+\_\+timer.\+c}!init\+Alive\+L\+ED@{init\+Alive\+L\+ED}}
+\index{init\+Alive\+L\+ED@{init\+Alive\+L\+ED}!system\+\_\+timer.\+c@{system\+\_\+timer.\+c}}
+\subsubsection{\texorpdfstring{init\+Alive\+L\+E\+D()}{initAliveLED()}}
+{\footnotesize\ttfamily void init\+Alive\+L\+ED (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system__timer_8c_a2ef37c6b4d5f172facf1a8cef7fcedd5}\label{system__timer_8c_a2ef37c6b4d5f172facf1a8cef7fcedd5}} 
+\index{system\+\_\+timer.\+c@{system\+\_\+timer.\+c}!init\+Clock@{init\+Clock}}
+\index{init\+Clock@{init\+Clock}!system\+\_\+timer.\+c@{system\+\_\+timer.\+c}}
+\subsubsection{\texorpdfstring{init\+Clock()}{initClock()}}
+{\footnotesize\ttfamily void init\+Clock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system__timer_8c_ab5e09814056d617c521549e542639b7e}\label{system__timer_8c_ab5e09814056d617c521549e542639b7e}} 
+\index{system\+\_\+timer.\+c@{system\+\_\+timer.\+c}!Sys\+Tick\+\_\+\+Handler@{Sys\+Tick\+\_\+\+Handler}}
+\index{Sys\+Tick\+\_\+\+Handler@{Sys\+Tick\+\_\+\+Handler}!system\+\_\+timer.\+c@{system\+\_\+timer.\+c}}
+\subsubsection{\texorpdfstring{Sys\+Tick\+\_\+\+Handler()}{SysTick\_Handler()}}
+{\footnotesize\ttfamily void Sys\+Tick\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system__timer_8c_af9e6109b87e10db9303be55cffb97498}\label{system__timer_8c_af9e6109b87e10db9303be55cffb97498}} 
+\index{system\+\_\+timer.\+c@{system\+\_\+timer.\+c}!toggle\+Alive\+L\+ED@{toggle\+Alive\+L\+ED}}
+\index{toggle\+Alive\+L\+ED@{toggle\+Alive\+L\+ED}!system\+\_\+timer.\+c@{system\+\_\+timer.\+c}}
+\subsubsection{\texorpdfstring{toggle\+Alive\+L\+E\+D()}{toggleAliveLED()}}
+{\footnotesize\ttfamily void toggle\+Alive\+L\+ED (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

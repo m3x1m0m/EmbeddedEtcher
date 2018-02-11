@@ -9,14 +9,14 @@
 #include "../os/queues.h"
 #include "stm32f10x_gpio.h"
 #include "stm32f10x_usart.h"
+#include "../os/error.h"
 
-uint8_t rx_overflow = 0;
+static uint8_t tx_overflow = 0;
 
-osQUEUE_t usart_rx_q, usart_tx_q;
+static osQUEUE_t usart_rx_q, usart_tx_q;
 
-uint8_t usart_rx_data[MAX_QUEUE_SIZE];
-uint8_t usart_tx_data[MAX_QUEUE_SIZE];
-
+static uint8_t usart_rx_data[USART_QUEUE_SIZE];
+static uint8_t usart_tx_data[USART_QUEUE_SIZE];
 
 void usart2Init(void)
 {
@@ -57,8 +57,8 @@ void usart2Init(void)
 	NVIC_EnableIRQ(USART2_IRQn);
 
 	/* Init. SW queues. */
-	osQInit(&usart_rx_q, sizeof(uint8_t), usart_rx_data);
-	osQInit(&usart_tx_q, sizeof(uint8_t), usart_tx_data);
+	osQInit(&usart_rx_q, sizeof(uint8_t), USART_QUEUE_SIZE, usart_rx_data);
+	osQInit(&usart_tx_q, sizeof(uint8_t), USART_QUEUE_SIZE, usart_tx_data);
 }
 
 void USART2_IRQHandler(void)
@@ -69,8 +69,7 @@ void USART2_IRQHandler(void)
 		uint8_t data;
 		data = USART_ReceiveData(USART2) & 0xFF;
 		if(!osEnqueue(&usart_rx_q, (void*)&data))
-			asm("NOP");
-		// TODO: Throw receive buffer overflow error here
+			THROW_ERROR(E_USART_RX_BUFFER_OVERLOW);
 	}
 
 	/* USART2 transmit buffer empty. */
@@ -83,15 +82,22 @@ void USART2_IRQHandler(void)
 		{
 			/* Nothing to send. Disable interrupt. */
 			USART_ITConfig(USART2, USART_IT_TXE, DISABLE);
+			tx_overflow = 0;
 		}
 	}
 }
 
 static uint8_t usart2PutChar(uint8_t data)
 {
+	/* Signal, that the buffer has overflowed. */
+	if(tx_overflow)
+		return 0;
 	/* Put data in the q. */
 	if(!osEnqueue(&usart_tx_q, (void*)&data))
+	{
+		tx_overflow = 1;
 		return 0;
+	}
 	/* Enable interrupt. */
 	USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
 	return 1;
@@ -107,16 +113,14 @@ static uint8_t usart2GetChar(void)
 
 uint8_t usart2PutString(uint8_t* word, size_t size)
 {
-	uint8_t j = 0;
 	/* Push data as long as it needs that it comes through. */
 	for(uint8_t i=0; i<size; i++)
-		while(!usart2PutChar(word[i]))
-		{
-			j++;
-			if(j > 1)
-				asm("NOP");
-			// TODO: Throw send buffer overflow error here
-		}
+		while(!usart2PutChar(word[i])){}
+	/* Did a overflow occur? */
+	if(tx_overflow)
+	{
+		THROW_ERROR(E_USART_RX_BUFFER_OVERLOW);
+	}
 	return 1;
 }
 
@@ -133,8 +137,10 @@ uint8_t usart2GetString(uint8_t* word, size_t buff_size, size_t *string_size)
 		if( *string_size < (buff_size-1) )
 			word[*string_size] = data;
 		else
+		{
+			THROW_ERROR(E_BUFFER_OVERFLOW);
 			return 0;
-		// TODO: Throw buffer overflow error.
+		}
 		(*string_size)++;
 	} while( (data != '\r') && (data != '\n') );
 	/* Append string termination. */

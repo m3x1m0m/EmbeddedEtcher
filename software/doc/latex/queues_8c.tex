@@ -1,0 +1,84 @@
+\hypertarget{queues_8c}{}\section{os/queues.c File Reference}
+\label{queues_8c}\index{os/queues.\+c@{os/queues.\+c}}
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f10x.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queues.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for queues.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{queues_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{queues_8c_a164dd36f8a083fd39b238b6d05910320}{os\+Q\+Init} (\hyperlink{structos_q_u_e_u_e__t}{os\+Q\+U\+E\+U\+E\+\_\+t} $\ast$q, size\+\_\+t ivarsize, uint16\+\_\+t iqsize, void $\ast$istart)
+\item 
+uint8\+\_\+t \hyperlink{queues_8c_a78b4d06b91514e747007d1cc03029b44}{os\+Enqueue} (\hyperlink{structos_q_u_e_u_e__t}{os\+Q\+U\+E\+U\+E\+\_\+t} $\ast$q, void $\ast$data)
+\item 
+uint8\+\_\+t \hyperlink{queues_8c_a0037677933e9d9d089327009032edf2c}{os\+Dequeue} (\hyperlink{structos_q_u_e_u_e__t}{os\+Q\+U\+E\+U\+E\+\_\+t} $\ast$q, void $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{queues_8c_a0037677933e9d9d089327009032edf2c}\label{queues_8c_a0037677933e9d9d089327009032edf2c}} 
+\index{queues.\+c@{queues.\+c}!os\+Dequeue@{os\+Dequeue}}
+\index{os\+Dequeue@{os\+Dequeue}!queues.\+c@{queues.\+c}}
+\subsubsection{\texorpdfstring{os\+Dequeue()}{osDequeue()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Dequeue (\begin{DoxyParamCaption}\item[{\hyperlink{structos_q_u_e_u_e__t}{os\+Q\+U\+E\+U\+E\+\_\+t} $\ast$}]{q,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Copy data from the q.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Q we are talking about. \\
+\hline
+{\em data} & Pointer to a local variable where the data from the q shall end up. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (data successfully copied) or 0 (q is empty). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{queues_8c_a78b4d06b91514e747007d1cc03029b44}\label{queues_8c_a78b4d06b91514e747007d1cc03029b44}} 
+\index{queues.\+c@{queues.\+c}!os\+Enqueue@{os\+Enqueue}}
+\index{os\+Enqueue@{os\+Enqueue}!queues.\+c@{queues.\+c}}
+\subsubsection{\texorpdfstring{os\+Enqueue()}{osEnqueue()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Enqueue (\begin{DoxyParamCaption}\item[{\hyperlink{structos_q_u_e_u_e__t}{os\+Q\+U\+E\+U\+E\+\_\+t} $\ast$}]{q,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+Copy data to the q.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Q we are talking about. \\
+\hline
+{\em data} & Pointer to a local variable where data is stored. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (data successfully copied) or 0 (q is full). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{queues_8c_a164dd36f8a083fd39b238b6d05910320}\label{queues_8c_a164dd36f8a083fd39b238b6d05910320}} 
+\index{queues.\+c@{queues.\+c}!os\+Q\+Init@{os\+Q\+Init}}
+\index{os\+Q\+Init@{os\+Q\+Init}!queues.\+c@{queues.\+c}}
+\subsubsection{\texorpdfstring{os\+Q\+Init()}{osQInit()}}
+{\footnotesize\ttfamily void os\+Q\+Init (\begin{DoxyParamCaption}\item[{\hyperlink{structos_q_u_e_u_e__t}{os\+Q\+U\+E\+U\+E\+\_\+t} $\ast$}]{q,  }\item[{size\+\_\+t}]{ivarsize,  }\item[{uint16\+\_\+t}]{iqsize,  }\item[{void $\ast$}]{istart }\end{DoxyParamCaption})}
+
+Function to initialize a queue properly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Pointer to the memory where the q is stored. \\
+\hline
+{\em ivarsize} & Size of the variable type stored in the q in bytes. \\
+\hline
+{\em iqsize} & Number of slots of the q. \\
+\hline
+{\em istart} & Pointer to the array where the actual data of the q is stored. \\
+\hline
+\end{DoxyParams}

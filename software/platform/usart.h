@@ -11,6 +11,8 @@
 #include "stm32f10x.h"
 #include <stdlib.h>
 
+#define USART_QUEUE_SIZE 1024
+
 void usart2Init(void);
 uint8_t usart2PutString(uint8_t* word, size_t size);
 uint8_t usart2GetString(uint8_t* word, size_t buff_size, size_t *string_size);

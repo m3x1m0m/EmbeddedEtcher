@@ -1,0 +1,45 @@
+\hypertarget{helpers_8c}{}\section{os/helpers.c File Reference}
+\label{helpers_8c}\index{os/helpers.\+c@{os/helpers.\+c}}
+{\ttfamily \#include \char`\"{}stm32f10x.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}helpers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for helpers.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{helpers_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{helpers_8c_a47defb2893c0a5e4427dd9daf6d5057d}{os\+Itoa} (int iint, char $\ast$iochar, size\+\_\+t ibuffsize, size\+\_\+t $\ast$obuffsize)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{helpers_8c_a47defb2893c0a5e4427dd9daf6d5057d}\label{helpers_8c_a47defb2893c0a5e4427dd9daf6d5057d}} 
+\index{helpers.\+c@{helpers.\+c}!os\+Itoa@{os\+Itoa}}
+\index{os\+Itoa@{os\+Itoa}!helpers.\+c@{helpers.\+c}}
+\subsubsection{\texorpdfstring{os\+Itoa()}{osItoa()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Itoa (\begin{DoxyParamCaption}\item[{int}]{iint,  }\item[{char $\ast$}]{iochar,  }\item[{size\+\_\+t}]{ibuffsize,  }\item[{size\+\_\+t $\ast$}]{obuffsize }\end{DoxyParamCaption})}
+
+Simple Interger to A\+S\+C\+II conversion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iint} & Input integer. \\
+\hline
+{\em iochar} & C string where the result ends up. \\
+\hline
+{\em ibuffsize} & Size of the C string for security reasons. \\
+\hline
+{\em obuffsize} & Size of the string created by the function. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (S\+U\+C\+C\+E\+SS) or 0 (buffer overflow). \\
+\hline
+\end{DoxyRetVals}

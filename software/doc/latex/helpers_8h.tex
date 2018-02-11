@@ -1,0 +1,81 @@
+\hypertarget{helpers_8h}{}\section{os/helpers.h File Reference}
+\label{helpers_8h}\index{os/helpers.\+h@{os/helpers.\+h}}
+
+
+Functions, which one needs here and there for the operating system.  
+
+
+{\ttfamily \#include \char`\"{}stm32f10x.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for helpers.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{helpers_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{helpers_8h_a8f7c8ca9321d4fa5a07c09b42120cab9}{os\+Pow\+Int} (int ibase, int iexponent)
+\item 
+uint8\+\_\+t \hyperlink{helpers_8h_a47defb2893c0a5e4427dd9daf6d5057d}{os\+Itoa} (int iint, char $\ast$iochar, size\+\_\+t ibuffsize, size\+\_\+t $\ast$obuffsize)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions, which one needs here and there for the operating system. 
+
+\begin{DoxyAuthor}{Author}
+Maximilian Stiefel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+8 Jan 2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{helpers_8h_a47defb2893c0a5e4427dd9daf6d5057d}\label{helpers_8h_a47defb2893c0a5e4427dd9daf6d5057d}} 
+\index{helpers.\+h@{helpers.\+h}!os\+Itoa@{os\+Itoa}}
+\index{os\+Itoa@{os\+Itoa}!helpers.\+h@{helpers.\+h}}
+\subsubsection{\texorpdfstring{os\+Itoa()}{osItoa()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Itoa (\begin{DoxyParamCaption}\item[{int}]{iint,  }\item[{char $\ast$}]{iochar,  }\item[{size\+\_\+t}]{ibuffsize,  }\item[{size\+\_\+t $\ast$}]{obuffsize }\end{DoxyParamCaption})}
+
+Simple Interger to A\+S\+C\+II conversion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iint} & Input integer. \\
+\hline
+{\em iochar} & C string where the result ends up. \\
+\hline
+{\em ibuffsize} & Size of the C string for security reasons. \\
+\hline
+{\em obuffsize} & Size of the string created by the function. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (S\+U\+C\+C\+E\+SS) or 0 (buffer overflow). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{helpers_8h_a8f7c8ca9321d4fa5a07c09b42120cab9}\label{helpers_8h_a8f7c8ca9321d4fa5a07c09b42120cab9}} 
+\index{helpers.\+h@{helpers.\+h}!os\+Pow\+Int@{os\+Pow\+Int}}
+\index{os\+Pow\+Int@{os\+Pow\+Int}!helpers.\+h@{helpers.\+h}}
+\subsubsection{\texorpdfstring{os\+Pow\+Int()}{osPowInt()}}
+{\footnotesize\ttfamily int os\+Pow\+Int (\begin{DoxyParamCaption}\item[{int}]{ibase,  }\item[{int}]{iexponent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Simple inline power calculation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ibase} & Input base. \\
+\hline
+{\em iexponent} & Input exponent. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Result.} & \\
+\hline
+\end{DoxyRetVals}

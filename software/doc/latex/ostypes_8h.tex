@@ -1,0 +1,127 @@
+\hypertarget{ostypes_8h}{}\section{os/ostypes.h File Reference}
+\label{ostypes_8h}\index{os/ostypes.\+h@{os/ostypes.\+h}}
+
+
+Different types the operating system uses are defined here.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}ossettings.\+h\char`\"{}}\newline
+Include dependency graph for ostypes.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{ostypes_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ostypes_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structos_t_c_b__t}{os\+T\+C\+B\+\_\+t}
+\item 
+struct \hyperlink{structos_q_u_e_u_e__t}{os\+Q\+U\+E\+U\+E\+\_\+t}
+\item 
+struct \hyperlink{structos_semaphore_handle__t}{os\+Semaphore\+Handle\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structos_t_c_b__t}{os\+T\+C\+B\+\_\+t} $\ast$ \hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{ostypes_8h_ac9a3dac1250976eb655c7a46fceedb8c}{os\+Scheduler\+State\+\_\+t} \{ {\bfseries S\+\_\+\+I\+N\+IT}, 
+{\bfseries S\+\_\+\+E\+X\+E\+C\+U\+T\+I\+N\+G\+\_\+\+T\+A\+SK}, 
+{\bfseries S\+\_\+\+E\+X\+E\+C\+U\+T\+I\+N\+G\+\_\+\+N\+O\+\_\+\+T\+A\+SK}, 
+{\bfseries S\+\_\+\+I\+D\+E\+L\+I\+NG}
+ \}
+\item 
+enum \hyperlink{ostypes_8h_ae410cf8fbf1704d3cedf2e2648b94a55}{os\+Task\+State\+\_\+t} \{ {\bfseries R\+E\+A\+DY}, 
+{\bfseries R\+U\+N\+N\+I\+NG}, 
+{\bfseries S\+U\+S\+P\+E\+N\+D\+ED}, 
+{\bfseries B\+L\+O\+C\+K\+ED}
+ \}
+\item 
+enum \hyperlink{ostypes_8h_acd9f76a1fbd8bc9084ff34add637094f}{os\+Error\+\_\+t} \{ \newline
+{\bfseries E\+\_\+\+M\+A\+X\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+T\+A\+S\+KS}, 
+{\bfseries E\+\_\+\+H\+E\+A\+P\+\_\+\+O\+V\+E\+R\+L\+F\+OW}, 
+{\bfseries E\+\_\+\+M\+A\+X\+\_\+\+L\+E\+V\+E\+L\+\_\+\+I\+N\+T\+\_\+\+N\+E\+S\+T\+I\+NG}, 
+{\bfseries E\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+OW}, 
+\newline
+{\bfseries E\+\_\+\+N\+U\+L\+L\+\_\+\+F\+O\+R\+B\+I\+D\+D\+EN}, 
+{\bfseries E\+\_\+\+W\+R\+O\+N\+G\+\_\+\+U\+S\+A\+G\+E\+\_\+\+O\+F\+\_\+\+P\+R\+I\+N\+TF}, 
+{\bfseries E\+\_\+\+U\+S\+A\+R\+T\+\_\+\+R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+L\+OW}, 
+{\bfseries E\+\_\+\+U\+S\+A\+R\+T\+\_\+\+T\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+O\+V\+E\+R\+L\+OW}, 
+\newline
+{\bfseries E\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+W\+E\+N\+T\+\_\+\+W\+R\+O\+NG}
+ \}
+\item 
+enum \hyperlink{ostypes_8h_a5c976ef3f21f800d03382e5cc640c362}{os\+Warning\+\_\+t} \{ {\bfseries W\+\_\+\+S\+Y\+S\+\_\+\+T\+I\+M\+E\+R\+\_\+\+O\+V\+E\+R\+F\+L\+OW}
+ \}
+\item 
+\mbox{\Hypertarget{ostypes_8h_ad68cf10efc310f9689628bde190fe714}\label{ostypes_8h_ad68cf10efc310f9689628bde190fe714}} 
+enum {\bfseries os\+Semaphore\+Binary\+\_\+t} \{ {\bfseries A\+V\+A\+I\+L\+A\+B\+LE}, 
+{\bfseries T\+A\+K\+EN}
+ \}
+\item 
+\mbox{\Hypertarget{ostypes_8h_ab218649e29adcb54aefa674dc6f17acf}\label{ostypes_8h_ab218649e29adcb54aefa674dc6f17acf}} 
+enum {\bfseries os\+Semaphore\+Type\+\_\+t} \{ {\bfseries B\+I\+N\+A\+RY}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Different types the operating system uses are defined here. 
+
+\begin{DoxyAuthor}{Author}
+Maximilian Stiefel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+8 Jan 2018 
+\end{DoxyDate}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}\label{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}} 
+\index{ostypes.\+h@{ostypes.\+h}!os\+Heap\+Node\+\_\+t@{os\+Heap\+Node\+\_\+t}}
+\index{os\+Heap\+Node\+\_\+t@{os\+Heap\+Node\+\_\+t}!ostypes.\+h@{ostypes.\+h}}
+\subsubsection{\texorpdfstring{os\+Heap\+Node\+\_\+t}{osHeapNode\_t}}
+{\footnotesize\ttfamily typedef \hyperlink{structos_t_c_b__t}{os\+T\+C\+B\+\_\+t}$\ast$ \hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t}}
+
+Data type to hold a pointer to a T\+CB. 
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{ostypes_8h_acd9f76a1fbd8bc9084ff34add637094f}\label{ostypes_8h_acd9f76a1fbd8bc9084ff34add637094f}} 
+\index{ostypes.\+h@{ostypes.\+h}!os\+Error\+\_\+t@{os\+Error\+\_\+t}}
+\index{os\+Error\+\_\+t@{os\+Error\+\_\+t}!ostypes.\+h@{ostypes.\+h}}
+\subsubsection{\texorpdfstring{os\+Error\+\_\+t}{osError\_t}}
+{\footnotesize\ttfamily enum \hyperlink{ostypes_8h_acd9f76a1fbd8bc9084ff34add637094f}{os\+Error\+\_\+t}}
+
+Enum to hold all possible error codes. \mbox{\Hypertarget{ostypes_8h_ac9a3dac1250976eb655c7a46fceedb8c}\label{ostypes_8h_ac9a3dac1250976eb655c7a46fceedb8c}} 
+\index{ostypes.\+h@{ostypes.\+h}!os\+Scheduler\+State\+\_\+t@{os\+Scheduler\+State\+\_\+t}}
+\index{os\+Scheduler\+State\+\_\+t@{os\+Scheduler\+State\+\_\+t}!ostypes.\+h@{ostypes.\+h}}
+\subsubsection{\texorpdfstring{os\+Scheduler\+State\+\_\+t}{osSchedulerState\_t}}
+{\footnotesize\ttfamily enum \hyperlink{ostypes_8h_ac9a3dac1250976eb655c7a46fceedb8c}{os\+Scheduler\+State\+\_\+t}}
+
+Enum for scheduler state. \mbox{\Hypertarget{ostypes_8h_ae410cf8fbf1704d3cedf2e2648b94a55}\label{ostypes_8h_ae410cf8fbf1704d3cedf2e2648b94a55}} 
+\index{ostypes.\+h@{ostypes.\+h}!os\+Task\+State\+\_\+t@{os\+Task\+State\+\_\+t}}
+\index{os\+Task\+State\+\_\+t@{os\+Task\+State\+\_\+t}!ostypes.\+h@{ostypes.\+h}}
+\subsubsection{\texorpdfstring{os\+Task\+State\+\_\+t}{osTaskState\_t}}
+{\footnotesize\ttfamily enum \hyperlink{ostypes_8h_ae410cf8fbf1704d3cedf2e2648b94a55}{os\+Task\+State\+\_\+t}}
+
+Enum for task states. \mbox{\Hypertarget{ostypes_8h_a5c976ef3f21f800d03382e5cc640c362}\label{ostypes_8h_a5c976ef3f21f800d03382e5cc640c362}} 
+\index{ostypes.\+h@{ostypes.\+h}!os\+Warning\+\_\+t@{os\+Warning\+\_\+t}}
+\index{os\+Warning\+\_\+t@{os\+Warning\+\_\+t}!ostypes.\+h@{ostypes.\+h}}
+\subsubsection{\texorpdfstring{os\+Warning\+\_\+t}{osWarning\_t}}
+{\footnotesize\ttfamily enum \hyperlink{ostypes_8h_a5c976ef3f21f800d03382e5cc640c362}{os\+Warning\+\_\+t}}
+
+Enum to hold all possible warning codes. 

@@ -1,16 +1,37 @@
+/**
+ * @file error.h
+ * @author Maximilian Stiefel
+ * @date 8 Jan 2018
+ * @brief Error logging functionalities of the operating system.
+ */
+
+
 #ifndef OS_ERROR_H
 #define OS_ERROR_H 
 
 //--------------Includes-----------------
 #include"ostypes.h"
+#include"ossettings.h"
 
 //--------------Preprocessor Hacks-------
+
+/** Create smart debug messages, which are disable if DEBUG is not defined.
+ *
+ */
+#if(DEBUG_MODE == ON)
+#define DEBUG_MSG(MSG, ...)\
+	osPrintf("%s:%d: debug: ", __FILE__, __LINE__);\
+	osPrintf(MSG, ##__VA_ARGS__)
+#else
+#define DEBUG_MSG(MSG, ...)
+#endif
 
 /** Throws an error given an error type.
  *
  */
 #define THROW_ERROR(ERROR_TYPE)\
 	osPrintError(__FILE__, __LINE__, ERROR_TYPE)
+
 /** Throws a warning given a warning type.
  *
  */

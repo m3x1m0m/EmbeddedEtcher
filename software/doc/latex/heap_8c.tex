@@ -1,0 +1,165 @@
+\hypertarget{heap_8c}{}\section{os/heap.c File Reference}
+\label{heap_8c}\index{os/heap.\+c@{os/heap.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$strings.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}heap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}error.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ostypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}printf.\+h\char`\"{}}\newline
+Include dependency graph for heap.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{heap_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{heap_8c_ae4c24d26f4411ab5492a2cc8dd5a4e7c}{os\+Heap\+Init} (\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$ioarray)
+\item 
+void \hyperlink{heap_8c_a5a51c0aca53767d5038681cc649d5fa8}{os\+Heap\+Heapify} (\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$ioarray, uint8\+\_\+t iind)
+\item 
+void \hyperlink{heap_8c_aba6f21f0421450da6531c7ea9f6976b5}{os\+Heap\+Build} (\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$ioarray)
+\item 
+uint8\+\_\+t \hyperlink{heap_8c_a2a73414cf2e4e1d2cebb4597a36bc018}{os\+Heap\+Maximum} (\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$ioarray, \hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$iomax)
+\item 
+uint8\+\_\+t \hyperlink{heap_8c_a31002fadb05f80382c9714462dfb092e}{os\+Heap\+Extract\+Maximum} (\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$ioarray, \hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$iomax)
+\item 
+uint8\+\_\+t \hyperlink{heap_8c_ab5c1d9c908e7d618bd5869f6e0ed16c5}{os\+Heap\+Insert} (\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$ioarray, \hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} x)
+\item 
+void \hyperlink{heap_8c_abfcd76f5650f218825578b0bd1652587}{os\+Heap\+PrintS} (\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$ioarray)
+\item 
+uint8\+\_\+t \hyperlink{heap_8c_a999a4beae27d4c7085278724feeabbc1}{os\+Heap\+Is\+Empty} (\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$ioarray)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{heap_8c_aba6f21f0421450da6531c7ea9f6976b5}\label{heap_8c_aba6f21f0421450da6531c7ea9f6976b5}} 
+\index{heap.\+c@{heap.\+c}!os\+Heap\+Build@{os\+Heap\+Build}}
+\index{os\+Heap\+Build@{os\+Heap\+Build}!heap.\+c@{heap.\+c}}
+\subsubsection{\texorpdfstring{os\+Heap\+Build()}{osHeapBuild()}}
+{\footnotesize\ttfamily void os\+Heap\+Build (\begin{DoxyParamCaption}\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{ioarray }\end{DoxyParamCaption})}
+
+Build the heap from the bottom up. Given an array which is not heapified at all.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioarray} & Array where the heap is stored. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{heap_8c_a31002fadb05f80382c9714462dfb092e}\label{heap_8c_a31002fadb05f80382c9714462dfb092e}} 
+\index{heap.\+c@{heap.\+c}!os\+Heap\+Extract\+Maximum@{os\+Heap\+Extract\+Maximum}}
+\index{os\+Heap\+Extract\+Maximum@{os\+Heap\+Extract\+Maximum}!heap.\+c@{heap.\+c}}
+\subsubsection{\texorpdfstring{os\+Heap\+Extract\+Maximum()}{osHeapExtractMaximum()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Heap\+Extract\+Maximum (\begin{DoxyParamCaption}\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{ioarray,  }\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{iomax }\end{DoxyParamCaption})}
+
+Copy heap maximum and remove it (extract).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioarray} & Array where the heap is stored. \\
+\hline
+{\em iomax} & Node, which is the maximum. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (S\+U\+C\+C\+E\+SS) or 0 (heap is empty). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{heap_8c_a5a51c0aca53767d5038681cc649d5fa8}\label{heap_8c_a5a51c0aca53767d5038681cc649d5fa8}} 
+\index{heap.\+c@{heap.\+c}!os\+Heap\+Heapify@{os\+Heap\+Heapify}}
+\index{os\+Heap\+Heapify@{os\+Heap\+Heapify}!heap.\+c@{heap.\+c}}
+\subsubsection{\texorpdfstring{os\+Heap\+Heapify()}{osHeapHeapify()}}
+{\footnotesize\ttfamily void os\+Heap\+Heapify (\begin{DoxyParamCaption}\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{ioarray,  }\item[{uint8\+\_\+t}]{iind }\end{DoxyParamCaption})}
+
+Classic heapify operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioarray} & Array where the heap is stored. \\
+\hline
+{\em iind} & Element to be put in the right place. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{heap_8c_ae4c24d26f4411ab5492a2cc8dd5a4e7c}\label{heap_8c_ae4c24d26f4411ab5492a2cc8dd5a4e7c}} 
+\index{heap.\+c@{heap.\+c}!os\+Heap\+Init@{os\+Heap\+Init}}
+\index{os\+Heap\+Init@{os\+Heap\+Init}!heap.\+c@{heap.\+c}}
+\subsubsection{\texorpdfstring{os\+Heap\+Init()}{osHeapInit()}}
+{\footnotesize\ttfamily void os\+Heap\+Init (\begin{DoxyParamCaption}\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{ioarray }\end{DoxyParamCaption})}
+
+Initializes all heap elements by setting them to N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Array} & where the heap is stored. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{heap_8c_ab5c1d9c908e7d618bd5869f6e0ed16c5}\label{heap_8c_ab5c1d9c908e7d618bd5869f6e0ed16c5}} 
+\index{heap.\+c@{heap.\+c}!os\+Heap\+Insert@{os\+Heap\+Insert}}
+\index{os\+Heap\+Insert@{os\+Heap\+Insert}!heap.\+c@{heap.\+c}}
+\subsubsection{\texorpdfstring{os\+Heap\+Insert()}{osHeapInsert()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Heap\+Insert (\begin{DoxyParamCaption}\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{ioarray,  }\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t}}]{x }\end{DoxyParamCaption})}
+
+Insert a node into the heap.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioarray} & Array where the heap is stored. \\
+\hline
+{\em x} & Node to be inserted into the heap. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (S\+U\+C\+C\+E\+SS) or 0 (heap is full). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{heap_8c_a999a4beae27d4c7085278724feeabbc1}\label{heap_8c_a999a4beae27d4c7085278724feeabbc1}} 
+\index{heap.\+c@{heap.\+c}!os\+Heap\+Is\+Empty@{os\+Heap\+Is\+Empty}}
+\index{os\+Heap\+Is\+Empty@{os\+Heap\+Is\+Empty}!heap.\+c@{heap.\+c}}
+\subsubsection{\texorpdfstring{os\+Heap\+Is\+Empty()}{osHeapIsEmpty()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Heap\+Is\+Empty (\begin{DoxyParamCaption}\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{ioarray }\end{DoxyParamCaption})}
+
+Is the heap empty?
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioarray} & Array where the heap is stored. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{heap_8c_a2a73414cf2e4e1d2cebb4597a36bc018}\label{heap_8c_a2a73414cf2e4e1d2cebb4597a36bc018}} 
+\index{heap.\+c@{heap.\+c}!os\+Heap\+Maximum@{os\+Heap\+Maximum}}
+\index{os\+Heap\+Maximum@{os\+Heap\+Maximum}!heap.\+c@{heap.\+c}}
+\subsubsection{\texorpdfstring{os\+Heap\+Maximum()}{osHeapMaximum()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Heap\+Maximum (\begin{DoxyParamCaption}\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{ioarray,  }\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{iomax }\end{DoxyParamCaption})}
+
+Copy heap maximum.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioarray} & Array where the heap is stored. \\
+\hline
+{\em iomax} & Node, which is the maximum. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (S\+U\+C\+C\+E\+SS) or 0 (heap is empty). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{heap_8c_abfcd76f5650f218825578b0bd1652587}\label{heap_8c_abfcd76f5650f218825578b0bd1652587}} 
+\index{heap.\+c@{heap.\+c}!os\+Heap\+PrintS@{os\+Heap\+PrintS}}
+\index{os\+Heap\+PrintS@{os\+Heap\+PrintS}!heap.\+c@{heap.\+c}}
+\subsubsection{\texorpdfstring{os\+Heap\+Print\+S()}{osHeapPrintS()}}
+{\footnotesize\ttfamily void os\+Heap\+PrintS (\begin{DoxyParamCaption}\item[{\hyperlink{ostypes_8h_a7b59ec4a57312624d7d832ba4a8e04be}{os\+Heap\+Node\+\_\+t} $\ast$}]{ioarray }\end{DoxyParamCaption})}
+
+Print heap all priorities for debugging purposes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ioarray} & Array where the heap is stored. \\
+\hline
+\end{DoxyParams}

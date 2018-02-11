@@ -1,0 +1,7 @@
+<map id="platform/usart.c" name="platform/usart.c">
+<area shape="rect" id="node2" href="$usart_8h.html" title="usart.h" alt="" coords="21,80,84,107"/>
+<area shape="rect" id="node5" href="$queues_8h.html" title="../os/queues.h" alt="" coords="108,80,213,107"/>
+<area shape="rect" id="node11" href="$error_8h.html" title="../os/error.h" alt="" coords="237,80,327,107"/>
+<area shape="rect" id="node6" href="$ostypes_8h.html" title="ostypes.h" alt="" coords="213,155,292,181"/>
+<area shape="rect" id="node8" href="$ossettings_8h.html" title="ossettings.h" alt="" coords="283,229,377,256"/>
+</map>

@@ -1,9 +1,10 @@
-/*
- * printf.h
- *
- *  Created on: Dec 7, 2017
- *      Author: maximilian
+/**
+ * @file printf.h
+ * @author Maximilian Stiefel
+ * @date 8 Jan 2018
+ * @brief Lightweight version of GNU printf.
  */
+
 
 #ifndef OS_PRINTF_H_
 #define OS_PRINTF_H_
@@ -27,15 +28,5 @@
  * @retval Returns the number of characters printed (SUCCESS) or -1 (FAILURE).
  */
 int osPrintf(const char* iformat, ...);
-
-/** printf implementation where the magic happens.
- *
- * @param iarguments Variable arguments list.
- * @param iobuffer Buffer where the formated string ends up.
- * @param ibuffsize Size of the iobuffer for security reasons.
- * @param iformat Format string from the user.
- * @retval Characters printed (SUCCESS) or -1 (FAILURE).
- */
-int osVPrintf(va_list iarguments, char* iobuffer, size_t ibuffsize, const char* iformat);
 
 #endif /* OS_PRINTF_H_ */

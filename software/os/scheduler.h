@@ -1,3 +1,10 @@
+/**
+ * @file scheduler.h
+ * @author Maximilian Stiefel
+ * @date 8 Jan 2018
+ * @brief Scheduler of the operating system.
+ */
+
 #ifndef OS_SCHEDULER_H
 #define OS_SCHEDULER_H
 
@@ -12,6 +19,12 @@
 //--------------Functions----------------
 
 // TODO: Schedule round robin when two or more tasks have the same priority.
+
+/** Get the system time.
+ *
+ * @retval Gives back the number of ticks since system has been initialized.
+ */
+uint32_t osSchedulerGetSysT(void);
 
 /** Spawn a task.
  *

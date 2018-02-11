@@ -1,0 +1,40 @@
+\hypertarget{semaphore_8c}{}\section{os/semaphore.c File Reference}
+\label{semaphore_8c}\index{os/semaphore.\+c@{os/semaphore.\+c}}
+{\ttfamily \#include \char`\"{}ostypes.\+h\char`\"{}}\newline
+Include dependency graph for semaphore.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{semaphore_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structos_semaphore_handle__t}{os\+Semaphore\+Handle\+\_\+t} \hyperlink{semaphore_8c_ace6c19a6c8803176ab54143941a6f53b}{os\+Semaphore\+Create\+Binary} (void)
+\item 
+uint8\+\_\+t \hyperlink{semaphore_8c_a753773d936c77e4dee7a7339fb2188e1}{os\+Semaphore\+Take} (os\+Semaphore\+\_\+t $\ast$isemaphore)
+\item 
+void \hyperlink{semaphore_8c_a9e50e20add87bbd8724d789fa301fec9}{os\+Semaphore\+Give} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{semaphore_8c_ace6c19a6c8803176ab54143941a6f53b}\label{semaphore_8c_ace6c19a6c8803176ab54143941a6f53b}} 
+\index{semaphore.\+c@{semaphore.\+c}!os\+Semaphore\+Create\+Binary@{os\+Semaphore\+Create\+Binary}}
+\index{os\+Semaphore\+Create\+Binary@{os\+Semaphore\+Create\+Binary}!semaphore.\+c@{semaphore.\+c}}
+\subsubsection{\texorpdfstring{os\+Semaphore\+Create\+Binary()}{osSemaphoreCreateBinary()}}
+{\footnotesize\ttfamily \hyperlink{structos_semaphore_handle__t}{os\+Semaphore\+Handle\+\_\+t} os\+Semaphore\+Create\+Binary (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{semaphore_8c_a9e50e20add87bbd8724d789fa301fec9}\label{semaphore_8c_a9e50e20add87bbd8724d789fa301fec9}} 
+\index{semaphore.\+c@{semaphore.\+c}!os\+Semaphore\+Give@{os\+Semaphore\+Give}}
+\index{os\+Semaphore\+Give@{os\+Semaphore\+Give}!semaphore.\+c@{semaphore.\+c}}
+\subsubsection{\texorpdfstring{os\+Semaphore\+Give()}{osSemaphoreGive()}}
+{\footnotesize\ttfamily void os\+Semaphore\+Give (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{semaphore_8c_a753773d936c77e4dee7a7339fb2188e1}\label{semaphore_8c_a753773d936c77e4dee7a7339fb2188e1}} 
+\index{semaphore.\+c@{semaphore.\+c}!os\+Semaphore\+Take@{os\+Semaphore\+Take}}
+\index{os\+Semaphore\+Take@{os\+Semaphore\+Take}!semaphore.\+c@{semaphore.\+c}}
+\subsubsection{\texorpdfstring{os\+Semaphore\+Take()}{osSemaphoreTake()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Semaphore\+Take (\begin{DoxyParamCaption}\item[{os\+Semaphore\+\_\+t $\ast$}]{isemaphore }\end{DoxyParamCaption})}
+

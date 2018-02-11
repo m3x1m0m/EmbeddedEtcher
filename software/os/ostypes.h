@@ -1,11 +1,18 @@
+/**
+ * @file ostypes.h
+ * @author Maximilian Stiefel
+ * @date 8 Jan 2018
+ * @brief Different types the operating system uses are defined here.
+ */
+
+
 #ifndef H_OS_TYPES
 #define H_OS_TYPES
 
 //--------------Includes-----------------
 
 #include<stdint.h>
-
-#include "ossettings.h"
+#include"ossettings.h"
 
 //--------------Scheduler----------------
 
@@ -52,7 +59,11 @@ typedef enum
             E_HEAP_OVERLFOW,
             E_MAX_LEVEL_INT_NESTING,
 			E_BUFFER_OVERFLOW,
-			E_NULL_FORBIDDEN
+			E_NULL_FORBIDDEN,
+			E_WRONG_USAGE_OF_PRINTF,
+			E_USART_RX_BUFFER_OVERLOW,
+			E_USART_TX_BUFFER_OVERLOW,
+			E_PRINTF_WENT_WRONG
 } osError_t;
 
 /** Enum to hold all possible warning codes.
@@ -79,9 +90,30 @@ typedef struct
 {
 	uint8_t write_p;
 	uint8_t read_p;
+	size_t varsize;
+	uint16_t qsize;
 	/* Gives you the possibility to use the q with every data type. */
 	void* start;
-	size_t varsize;
 } osQUEUE_t;
+
+//--------------Semaphores---------------
+
+typedef enum
+{
+	AVAILABLE,
+	TAKEN
+} osSemaphoreBinary_t;
+
+typedef enum
+{
+	BINARY
+} osSemaphoreType_t;
+
+
+typedef struct
+{
+	osSemaphoreType_t type;
+	uint8_t data;
+} osSemaphoreHandle_t;
 
 #endif

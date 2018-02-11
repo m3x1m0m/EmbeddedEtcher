@@ -1,0 +1,164 @@
+\hypertarget{error_8h}{}\section{os/error.h File Reference}
+\label{error_8h}\index{os/error.\+h@{os/error.\+h}}
+
+
+Error logging functionalities of the operating system.  
+
+
+{\ttfamily \#include \char`\"{}ostypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ossettings.\+h\char`\"{}}\newline
+Include dependency graph for error.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{error_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{error_8h_ad43da790cc069011db9c6f0ef8fea11b}{D\+E\+B\+U\+G\+\_\+\+M\+SG}(M\+SG, ...)
+\item 
+\#define \hyperlink{error_8h_a443fea42d93b53e3569d33e80c5de6c4}{T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR}(E\+R\+R\+O\+R\+\_\+\+T\+Y\+PE)~\hyperlink{error_8h_a540c46d0a32421cad29354147a02c4ea}{os\+Print\+Error}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, E\+R\+R\+O\+R\+\_\+\+T\+Y\+PE)
+\item 
+\#define \hyperlink{error_8h_a22fc1f25f5e596198d4a773df7762c77}{T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG}(W\+A\+R\+N\+I\+N\+G\+\_\+\+T\+Y\+PE)~\hyperlink{error_8h_a8ea68ece7fa351c9c046006749706e26}{os\+Print\+Warning}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, W\+A\+R\+N\+I\+N\+G\+\_\+\+T\+Y\+PE)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{error_8h_af770cfb23cba6e7aa7c69aad1bbf968c}{os\+Explain\+Error} (const char $\ast$ifile, const uint8\+\_\+t iline, const \hyperlink{ostypes_8h_acd9f76a1fbd8bc9084ff34add637094f}{os\+Error\+\_\+t} ierror, char $\ast$iomessage)
+\item 
+uint8\+\_\+t \hyperlink{error_8h_a540c46d0a32421cad29354147a02c4ea}{os\+Print\+Error} (const char $\ast$ifile, const int iline, const \hyperlink{ostypes_8h_acd9f76a1fbd8bc9084ff34add637094f}{os\+Error\+\_\+t} ierror)
+\item 
+uint8\+\_\+t \hyperlink{error_8h_a29238a23e284dd0a6278434447be4682}{os\+Explain\+Warning} (const char $\ast$ifile, const uint8\+\_\+t iline, const \hyperlink{ostypes_8h_a5c976ef3f21f800d03382e5cc640c362}{os\+Warning\+\_\+t} ierror, char $\ast$iomessage)
+\item 
+uint8\+\_\+t \hyperlink{error_8h_a8ea68ece7fa351c9c046006749706e26}{os\+Print\+Warning} (const char $\ast$ifile, const int iline, const \hyperlink{ostypes_8h_a5c976ef3f21f800d03382e5cc640c362}{os\+Warning\+\_\+t} ierror)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Error logging functionalities of the operating system. 
+
+\begin{DoxyAuthor}{Author}
+Maximilian Stiefel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+8 Jan 2018 
+\end{DoxyDate}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{error_8h_ad43da790cc069011db9c6f0ef8fea11b}\label{error_8h_ad43da790cc069011db9c6f0ef8fea11b}} 
+\index{error.\+h@{error.\+h}!D\+E\+B\+U\+G\+\_\+\+M\+SG@{D\+E\+B\+U\+G\+\_\+\+M\+SG}}
+\index{D\+E\+B\+U\+G\+\_\+\+M\+SG@{D\+E\+B\+U\+G\+\_\+\+M\+SG}!error.\+h@{error.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+M\+SG}{DEBUG\_MSG}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+M\+SG(\begin{DoxyParamCaption}\item[{}]{M\+SG,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Create smart debug messages, which are disable if D\+E\+B\+UG is not defined. \mbox{\Hypertarget{error_8h_a443fea42d93b53e3569d33e80c5de6c4}\label{error_8h_a443fea42d93b53e3569d33e80c5de6c4}} 
+\index{error.\+h@{error.\+h}!T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR@{T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR}}
+\index{T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR@{T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR}!error.\+h@{error.\+h}}
+\subsubsection{\texorpdfstring{T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR}{THROW\_ERROR}}
+{\footnotesize\ttfamily \#define T\+H\+R\+O\+W\+\_\+\+E\+R\+R\+OR(\begin{DoxyParamCaption}\item[{}]{E\+R\+R\+O\+R\+\_\+\+T\+Y\+PE }\end{DoxyParamCaption})~\hyperlink{error_8h_a540c46d0a32421cad29354147a02c4ea}{os\+Print\+Error}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, E\+R\+R\+O\+R\+\_\+\+T\+Y\+PE)}
+
+Throws an error given an error type. \mbox{\Hypertarget{error_8h_a22fc1f25f5e596198d4a773df7762c77}\label{error_8h_a22fc1f25f5e596198d4a773df7762c77}} 
+\index{error.\+h@{error.\+h}!T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG@{T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG}}
+\index{T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG@{T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG}!error.\+h@{error.\+h}}
+\subsubsection{\texorpdfstring{T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG}{THROW\_WARNING}}
+{\footnotesize\ttfamily \#define T\+H\+R\+O\+W\+\_\+\+W\+A\+R\+N\+I\+NG(\begin{DoxyParamCaption}\item[{}]{W\+A\+R\+N\+I\+N\+G\+\_\+\+T\+Y\+PE }\end{DoxyParamCaption})~\hyperlink{error_8h_a8ea68ece7fa351c9c046006749706e26}{os\+Print\+Warning}(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, W\+A\+R\+N\+I\+N\+G\+\_\+\+T\+Y\+PE)}
+
+Throws a warning given a warning type. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{error_8h_af770cfb23cba6e7aa7c69aad1bbf968c}\label{error_8h_af770cfb23cba6e7aa7c69aad1bbf968c}} 
+\index{error.\+h@{error.\+h}!os\+Explain\+Error@{os\+Explain\+Error}}
+\index{os\+Explain\+Error@{os\+Explain\+Error}!error.\+h@{error.\+h}}
+\subsubsection{\texorpdfstring{os\+Explain\+Error()}{osExplainError()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Explain\+Error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ifile,  }\item[{const uint8\+\_\+t}]{iline,  }\item[{const \hyperlink{ostypes_8h_acd9f76a1fbd8bc9084ff34add637094f}{os\+Error\+\_\+t}}]{ierror,  }\item[{char $\ast$}]{iomessage }\end{DoxyParamCaption})}
+
+Creating a error message string from inter alia an error code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ifile} & Filename where error occurs. \\
+\hline
+{\em iline} & Line where error occurs. \\
+\hline
+{\em ierror} & Error code. \\
+\hline
+{\em message} & Message related to the error. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (S\+U\+C\+C\+E\+SS) or 0 (F\+A\+I\+L\+U\+RE). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{error_8h_a29238a23e284dd0a6278434447be4682}\label{error_8h_a29238a23e284dd0a6278434447be4682}} 
+\index{error.\+h@{error.\+h}!os\+Explain\+Warning@{os\+Explain\+Warning}}
+\index{os\+Explain\+Warning@{os\+Explain\+Warning}!error.\+h@{error.\+h}}
+\subsubsection{\texorpdfstring{os\+Explain\+Warning()}{osExplainWarning()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Explain\+Warning (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ifile,  }\item[{const uint8\+\_\+t}]{iline,  }\item[{const \hyperlink{ostypes_8h_a5c976ef3f21f800d03382e5cc640c362}{os\+Warning\+\_\+t}}]{ierror,  }\item[{char $\ast$}]{iomessage }\end{DoxyParamCaption})}
+
+Creating a warning message string from inter alia a warning code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ifile} & Filename where warning occurs. \\
+\hline
+{\em iline} & Line where warning occurs. \\
+\hline
+{\em ierror} & Warning code. \\
+\hline
+{\em message} & Message related to the warning. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (S\+U\+C\+C\+E\+SS) or 0 (F\+A\+I\+L\+U\+RE). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{error_8h_a540c46d0a32421cad29354147a02c4ea}\label{error_8h_a540c46d0a32421cad29354147a02c4ea}} 
+\index{error.\+h@{error.\+h}!os\+Print\+Error@{os\+Print\+Error}}
+\index{os\+Print\+Error@{os\+Print\+Error}!error.\+h@{error.\+h}}
+\subsubsection{\texorpdfstring{os\+Print\+Error()}{osPrintError()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Print\+Error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ifile,  }\item[{const int}]{iline,  }\item[{const \hyperlink{ostypes_8h_acd9f76a1fbd8bc9084ff34add637094f}{os\+Error\+\_\+t}}]{ierror }\end{DoxyParamCaption})}
+
+Print error. This is where the error output can be redirected (later).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ifile} & Filename where error occurs. \\
+\hline
+{\em iline} & Line where error occurs. \\
+\hline
+{\em ierror} & Error code. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (S\+U\+C\+C\+E\+SS) or 0 (F\+A\+I\+L\+U\+RE). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{error_8h_a8ea68ece7fa351c9c046006749706e26}\label{error_8h_a8ea68ece7fa351c9c046006749706e26}} 
+\index{error.\+h@{error.\+h}!os\+Print\+Warning@{os\+Print\+Warning}}
+\index{os\+Print\+Warning@{os\+Print\+Warning}!error.\+h@{error.\+h}}
+\subsubsection{\texorpdfstring{os\+Print\+Warning()}{osPrintWarning()}}
+{\footnotesize\ttfamily uint8\+\_\+t os\+Print\+Warning (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ifile,  }\item[{const int}]{iline,  }\item[{const \hyperlink{ostypes_8h_a5c976ef3f21f800d03382e5cc640c362}{os\+Warning\+\_\+t}}]{ierror }\end{DoxyParamCaption})}
+
+Print warning. This is where the warning output can be redirected (later).
+
+
+\begin{DoxyParams}{Parameters}
+{\em ifile} & Filename where warning occurs. \\
+\hline
+{\em iline} & Line where warning occurs. \\
+\hline
+{\em ierror} & Warning code. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & (S\+U\+C\+C\+E\+SS) or 0 (F\+A\+I\+L\+U\+RE). \\
+\hline
+\end{DoxyRetVals}

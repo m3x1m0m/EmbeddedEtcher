@@ -1,0 +1,54 @@
+\hypertarget{printf_8h}{}\section{os/printf.h File Reference}
+\label{printf_8h}\index{os/printf.\+h@{os/printf.\+h}}
+
+
+Lightweight version of G\+NU printf.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stm32f10x.\+h\char`\"{}}\newline
+Include dependency graph for printf.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{printf_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{printf_8h_ae2b707b3f94f0857c447e83c833b068a}{os\+Printf} (const char $\ast$iformat,...)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lightweight version of G\+NU printf. 
+
+\begin{DoxyAuthor}{Author}
+Maximilian Stiefel 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+8 Jan 2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{printf_8h_ae2b707b3f94f0857c447e83c833b068a}\label{printf_8h_ae2b707b3f94f0857c447e83c833b068a}} 
+\index{printf.\+h@{printf.\+h}!os\+Printf@{os\+Printf}}
+\index{os\+Printf@{os\+Printf}!printf.\+h@{printf.\+h}}
+\subsubsection{\texorpdfstring{os\+Printf()}{osPrintf()}}
+{\footnotesize\ttfamily int os\+Printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{iformat,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+printf to be used by the OS user. Can be ported to another platform easily by just using another function to transmit one string with the U\+S\+A\+RT.
+
+
+\begin{DoxyParams}{Parameters}
+{\em iformat} & Currently supported are d integers c single characters s C strings f Floats with 4 decimals \%.xf Floats with x decimals \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the number of characters printed (S\+U\+C\+C\+E\+SS) or -\/1 (F\+A\+I\+L\+U\+RE). \\
+\hline
+\end{DoxyRetVals}
