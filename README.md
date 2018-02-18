@@ -14,11 +14,11 @@ compatible to euro cards (and even bigger ones). The etching machine is either
 filled with sodium persulfate (Na<sub>2</sub>S<sub>2</sub>O<sub>8</sub>) or
 iron(III) chloride (FeCl<sub>3</sub>) dissolved in water of course.
 
-## Redhead OS
+## RedheadOS
 
 One of the byproducts of this project is a small real-time OS, which is ment to run on embedded platforms. It is based on fixed priority scheduling and includes some nice accessories, so one does not always have to reinvent the wheel for every new project.  
 
-![3D Preview from KiCad (2).](https://github.com/m3x1m0m/ecthing/blob/master/pcbs/extension_board/output/3d_pic_2.jpg)
+![ReadheadOS Structure.](https://github.com/m3x1m0m/EmbeddedEtcher/blob/master/docs/report/fig/redhead_os.png)
 
 
 ## UV Light 
