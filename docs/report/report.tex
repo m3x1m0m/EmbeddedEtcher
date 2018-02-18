@@ -1,0 +1,237 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author:      Nils Weber and Maximilian Stiefel
+%% Date:        23.12.2017
+%% University:  Uppsala Universitet
+%% Department:  Institutionen för informationsteknologi 
+%% Course:      Embedded Control System Project
+%% Project:     PRECISELY CONTROLLED DIY ETCHING MACHINE 
+%%				FOR USAGE AT HOME AND IN SMALL LABS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{report}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Encoding of the input
+\usepackage[utf8]{inputenc}
+
+% Geometry stuff
+\usepackage[head=24pt,a4paper,lmargin={2.5cm},rmargin={2.5cm},tmargin={2.5cm},
+bmargin={2.5cm}]{geometry}
+
+% For graphics
+\usepackage{graphicx}
+\usepackage{float}
+
+% For code highlighting
+\usepackage{minted}
+
+% For shaded
+\usepackage{xcolor}
+\usepackage{framed}
+\definecolor{shadecolor}{gray}{0.9}
+
+% For some symbols
+\usepackage{textcomp}
+%\usepackage{eurosans}
+
+% For math
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\setlength{\parindent}{0em} 
+
+% For title formatting 
+\usepackage{titlesec} 
+
+\titleformat%
+{\chapter}%
+[block]%
+{\bfseries\Huge}%
+{\thechapter\hspace{1cm}}%
+{0pt}%
+{\bfseries\Huge}%
+
+% For SI units.
+\usepackage{siunitx}
+
+% Input definition macros
+\input{mydefs.tex}
+
+\usepackage{hyperref}
+\hypersetup{
+	plainpages=false,
+	unicode=false,
+	pdftoolbar=true,
+	pdfmenubar=true,
+	pdffitwindow=false,
+	pdfstartview={FitH},
+	pdftitle={\mytitle},
+	pdfauthor={\myauthora ,\space\myauthorb},
+	pdfsubject={\mytypeofwork\space\myduedate},
+	pdfcreator={\myauthora ,\space\myauthorb},
+	pdfproducer={\myauthora ,\space\myauthorb},
+	pdfkeywords={\mykeywords},
+	pdfnewwindow=true,
+	pdfborder={0 0 0},
+	colorlinks=false,
+	linkcolor=black,
+	citecolor=black,
+	filecolor=black,
+	urlcolor=cyan
+}	
+
+\newcommand{\newpar}{\vspace{1em}\\}
+\newcommand{\myemph}[1]{\textsl{#1}}
+
+
+% For PDFs
+\usepackage{pdfpages}
+
+% For quotes
+\usepackage[autostyle]{csquotes}
+\usepackage[style=ieee,backend=bibtex]{biblatex}
+\addbibresource{literature.bib}
+
+% For tables
+\usepackage{tabularx}
+% For a forced linebreak in a table cell 
+% cf. https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell#19678
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+% For glossary
+\usepackage[toc,nonumberlist]{glossaries} 
+\makeglossaries     
+\input{./acronyms.tex}
+
+% For chemical formulas
+\usepackage{chemformula}
+
+% Header and footer
+\usepackage{fancyhdr}
+\lhead{\ifnum\value{chapter}>0 \includegraphics[width=0.6cm]{./fig/uppsala_university} \fi}
+\chead{}
+\rhead{\ifnum\value{chapter}>0 
+\leftmark{} |
+\rightmark{}
+\fi}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+%\setlength{\headheight}{1cm}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titlepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{titlepage.tex}
+
+\newcounter{roman}
+\pagenumbering{Roman}
+
+\pagestyle{fancy}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TOC etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\listoffigures
+\newpage
+\listoftables
+\printglossary[title=List of Abbreviations,toctitle=List of Abbreviations,type=\acronymtype]
+
+\newpage
+\setcounter{roman}{\value{page}}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./doc/introduction.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Background and Analysis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./doc/background.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Design
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./doc/design.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Implementation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./doc/implementation.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Evaluation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./doc/evaluation.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conclusion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./doc/conclusion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography and Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\pagenumbering{Roman}
+\setcounter{page}{\value{roman}}
+\pagestyle{empty}
+
+\printbibliography[heading=bibintoc]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+% Introduce new geometry to be able to have more space for appendix
+\newgeometry{lmargin={2.5cm},rmargin={2.5cm},tmargin={0cm},bmargin={1,5cm}}
+\includepdf[pages={1},scale=0.8,pagecommand=\chapter{Schematics Extension Board}\label{append:extension}]{./fig/schematics_extension_board.pdf}
+\includepdf[pages={2-3, 35-37},scale=0.8,pagecommand={}]{./fig/schematics_extension_board.pdf}
+
+\chapter{Technical drawings of PCB-holder}
+\label{append:techDrawPCB}
+
+\begin{figure}[H]
+\centering  
+\includegraphics[width=0.8\textwidth]{./fig/pcb_holder_crossbar}
+\caption{Technical Drawing: Crossbar} 
+\end{figure} 
+
+\begin{figure}[H]
+\centering  
+\includegraphics[width=0.8\textwidth]{./fig/pcb_holder_floor_prot}   
+\caption{Technical Drawing: Floor}
+\end{figure} 
+
+\newgeometry{lmargin={2.5cm},rmargin={2.5cm},tmargin={2.5cm},bmargin={2.5cm}}
+
+\begin{figure}[H]
+\centering  
+\includegraphics[width=0.8\textwidth]{./fig/pcb_holder_holder}   
+\caption{Technical Drawing: Holder}
+\end{figure} 
+
+\begin{figure}[H]
+\centering  
+\includegraphics[width=0.8\textwidth]{./fig/pcb_holder_lid}  
+\caption{Technical Drawing: Lid} 
+\end{figure} 
+
+\end{document}

@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author:      Nils Weber and Maximilian Stiefel
+%% Date:        23.12.2017
+%% University:  Uppsala Universitet
+%% Department:  Institutionen för informationsteknologi 
+%% Course:      Embedded Control System Project
+%% Project:     PRECISELY CONTROLLED DIY ETCHING MACHINE 
+%%				FOR USAGE AT HOME AND IN SMALL LABS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Evaluation}
+\label{chap:evaluation}
+% Describe the status of the work. What has been achieved?
+The whole project is a strict work in progress, which is not finished yet. Different components have a different maturity. 
+\newpar 
+Tab. \ref{tab:os_status_quo} reflects the status quo of the \gls{OS}. It can certainly not keep up with modern \glspl{OS}. Nevertheless, it is easily comprehensible, because of its small footprint, and provides a bit another approach as a pure solution for real-time \glspl{OS} for embedded applications with useful accessories in this field.  
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{lcX}
+\textbf{Component} & \textbf{Working} & \textbf{Problem} \\\hline
+Non-preemptive Scheduling & \checkmark	& Round-robin scheduling is not guaranteed among tasks having the same priority. \\
+Preemptive Scheduling & \checkmark	& \\	
+System Tick Configuration & \checkmark	& \\
+Error Logging & \checkmark	& Only supports one sink (\gls{USART}) so far. \\
+printf & \checkmark	& Only supports the options \%d, \%f, \%c and \%s currently. \\
+Queues & \checkmark	& Only supports one kind of queue, which is useful for a producer-consumer scenarios. \\
+Semaphores & & \\
+\gls{PID} controller infrastructure & & \\
+Console & & \\
+\hline
+\end{tabularx}
+\caption{Status Quo \gls{OS}}
+\label{tab:os_status_quo}
+\end{table}
+
+The \gls{UV} light hardware has been simulated with the help of \myemph{LTSpice} quite extensively. After gaining support from Yi Wang and convincing the department to pay these companies for their products and services respectively, both \glspl{PCB} introduced earlier have been manufactured in China by the company \myemph{Elecrow} (\hyperref{http://www.elecrow.com}{Elecrow}). Also, the components have been ordered in the USA from the distributor \myemph{Digikey} and are available. The boards have not yet been assembled and tested. The planned intend to get rid of mercury, mentioned in chapter \ref{chap:background}, has been pursued consequently. It is an absolutely revolutionary feature, that this \gls{UV} exposure unit does not use fluorescent lamps like the most common type the competitors offer on the market right now. A housing has been built from wood, which is cheaper and rather environmentally friendly. The current mechanics allow single-sided \gls{UV} light exposure.  
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{lcX}
+\textbf{Component} & \textbf{Working} & \textbf{Problem} \\\hline
+No mercury & \checkmark & \\
+Double-sided UV light exposure & & \\
+Precisely controlled light intensity & \checkmark & \\
+Digital and elegant user interface & \checkmark & \\
+Hardware design ready & \checkmark & \\
+Hardware assembled and tested & & \\
+No expensive metal housings & \checkmark & \\
+\gls{DAC} driver & & \\
+\gls{OLED} driver & & \\
+Rotary encoder driver & & \\
+\hline
+\end{tabularx}
+\caption{Status Quo \gls{UV} light}
+\label{tab:os_status_quo}
+\end{table}
+
+
+The etching bath temperature control is in an earlier stage of development, where success was for a long time hindered by a driver issue with the \gls{ADC} on a similar STM32-chip. For development the STM32L073RZ was used, for the simple reason of immediate availability. However, the \gls{ADC} on this specific chip has had problems reading the values properly until now. Without actual data from the temperature sensor the rest of the system could only be implemented but not tested. A simple on-off controller has been tested successfully, the implementation with proportional and inertia correction has not yet been tested successfully.
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{lcX}
+\textbf{Component} & \textbf{Working} & \textbf{Problem} \\\hline
+Digital and elegant user interface & \checkmark & \\
+Hardware design ready & & \\
+Hardware assembled and tested & & Heater needs to be "hacked" for control \\
+Additive manufactured housing & \checkmark & PCB holder needs improvement \\
+\gls{ADC} driver for NTC & \checkmark & \\
+\gls{I2C} driver & \checkmark & \\
+\gls{OLED} driver & \checkmark & \\
+Rotary encoder driver & \checkmark & Low-pass filter missing \\
+On-off controller & \checkmark & \\
+On-off controller with corrections & & \\
+\hline
+\end{tabularx}
+\caption{Status Quo etching bath}
+\label{tab:etching_status_quo}
+\end{table}

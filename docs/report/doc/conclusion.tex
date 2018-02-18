@@ -1,0 +1,20 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author:      Nils Weber and Maximilian Stiefel
+%% Date:        23.12.2017
+%% University:  Uppsala Universitet
+%% Department:  Institutionen för informationsteknologi 
+%% Course:      Embedded Control System Project
+%% Project:     PRECISELY CONTROLLED DIY ETCHING MACHINE 
+%%				FOR USAGE AT HOME AND IN SMALL LABS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Conclusion and Future Work}
+\label{chap:conclusion}
+% Summarize and conclude. Give a brief outlook as well on what will be done in future. 
+
+The \gls{OS} kernel works and the system is ready to be deployed. A couple of accessories as are not implemented at all yet. Others need to be upgraded. The kernel is also subject to improvements. It shall be possible for the programmer to chose whether the scheduling is preemptive or non-preemptive. Also, it shall be possible to assign a stack size to a task and make sure it is not overflowed. 
+\newpar 
+The \gls{UV} light development put forth a complex four layer extension board for the \myemph{Nucleo-F103RB} from \myemph{STM}, including a sophisticated \gls{LED} driver using a linear regulator approach. The circuits on the board have been laid out, simulated and in a next step they will be tested. Moreover, a mechanical design has been sketched and built up. Unfortunately, it only supports single-sided \gls{UV} light exposure and causes a lot of manual work building it, which is something to be solved in the near future. One idea is to use some \gls{FDM} parts combined with two \glspl{PCB}, 128 \glspl{LED} each, to make double-sided exposure and an easy assembly possible. Most of the driver software implementation still has to be done and the whole system has to be integrated. 
+\newpar
+The temperature control development for the etching bath is ready for testing as soon as the temperature sensor is read correctly from the \gls{ADC}. These tests will show if the implemented improved on-off control will deliver sufficient results or if the heater has to be controlled with a constant current controller. When that is decided further steps regarding hardware design can be made.
+Also, the current implementation has to be ported to the \gls{OS}, which should not entail much work, as it is structured in a fitting way already. 
